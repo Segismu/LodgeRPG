@@ -10,11 +10,16 @@ namespace RPG.Combat
     public class Fight : MonoBehaviour, IAction
     {
         [SerializeField] float hitRange = 2f;
+        [SerializeField] float timeBetweenHits = 1f;
+        [SerializeField] float weaponDamage = 5f;
 
         Transform target;
+        float timeSinceLastHit = 0;
 
         private void Update()
         {
+            timeSinceLastHit += Time.deltaTime;
+
             if (target == null) return;
 
             if (!GetIsInRage())
@@ -30,7 +35,20 @@ namespace RPG.Combat
 
         private void AttackBehaviour()
         {
-            GetComponent<Animator>().SetTrigger("attack");
+            if (timeSinceLastHit > timeBetweenHits)
+            {
+                //This will trigger hit event.
+                GetComponent<Animator>().SetTrigger("attack");
+                timeSinceLastHit = 0;
+            }
+
+        }
+
+        //Animation
+        void Hit()
+        {
+            HP hpComponent = target.GetComponent<HP>();
+            hpComponent.TakeDamage(weaponDamage);
         }
 
         private bool GetIsInRage()
@@ -48,12 +66,6 @@ namespace RPG.Combat
         public void Cancel()
         {
             target = null;
-        }
-
-        //Animation
-        void Hit()
-        {
-
         }
     }
 }
