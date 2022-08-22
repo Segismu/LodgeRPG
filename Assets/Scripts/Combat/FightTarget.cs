@@ -4,6 +4,8 @@ using UnityEngine;
 
 namespace RPG.Combat
 {
+    [RequireComponent(typeof(HP))]
+
     public class FightTarget : MonoBehaviour
     {
 
