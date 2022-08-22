@@ -4,6 +4,7 @@ using UnityEngine;
 using RPG.Movement;
 using RPG.Core;
 using static UnityEngine.GraphicsBuffer;
+using System;
 
 namespace RPG.Combat
 {
@@ -65,14 +66,14 @@ namespace RPG.Combat
             return Vector3.Distance(transform.position, target.transform.position) < hitRange;
         }
 
-        public bool CanAttack(FightTarget fightTarget)
+        public bool CanAttack(GameObject fightTarget)
         {
             if (fightTarget == null) { return false; }
             HP targetToTest = fightTarget.GetComponent<HP>();
             return targetToTest != null && !targetToTest.IsDead();
         }
 
-        public void Attack(FightTarget fightTarget)
+        public void Attack(GameObject fightTarget)
         {
             GetComponent<Scheduler>().StartAction(this);
             target = fightTarget.GetComponent<HP>();
