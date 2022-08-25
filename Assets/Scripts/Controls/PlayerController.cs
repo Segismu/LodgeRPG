@@ -3,14 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using RPG.Movement;
 using RPG.Combat;
+using RPG.Core;
 
 namespace RPG.Controls
 {
     public class PlayerController : MonoBehaviour
     {
+        HP hppoints;
+
+        private void Start()
+        {
+            hppoints = GetComponent<HP>();
+        }
 
         private void Update()
         {
+            if (hppoints.IsDead()) return;
+
             if (CombatInteractor()) return;
             if (MoverInteractor()) return;
         }
@@ -28,7 +37,7 @@ namespace RPG.Controls
                     continue;
                 }
 
-                if (Input.GetMouseButtonDown(0))
+                if (Input.GetMouseButton(0))
                 {
                     GetComponent<Fight>().Attack(target.gameObject);
                 }

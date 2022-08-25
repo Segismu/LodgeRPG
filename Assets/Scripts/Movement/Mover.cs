@@ -12,14 +12,17 @@ namespace RPG.Movement
         [SerializeField] Transform target;
 
         NavMeshAgent navMeshAgent;
+        HP hppoints;
 
         private void Start()
         {
             navMeshAgent = GetComponent<NavMeshAgent>();
+            hppoints = GetComponent<HP>();
         }
 
         void Update()
         {
+            navMeshAgent.enabled = !hppoints.IsDead();
             UpdateAnimator();
         }
 
