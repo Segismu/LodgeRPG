@@ -91,11 +91,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _TextureSample0:
-        m_Texture: {fileID: 2800000, guid: 552c916503e8732489cf99aed51e2682, type: 3}
+        m_Texture: {fileID: 2800000, guid: a0983ce3c4757a047a9a5b0db93af71f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _TextureSample1:
-        m_Texture: {fileID: 2800000, guid: 552c916503e8732489cf99aed51e2682, type: 3}
+        m_Texture: {fileID: 2800000, guid: 86f36abb0738eb14bbdc365d81802783, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _texcoord:
