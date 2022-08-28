@@ -27,7 +27,7 @@ namespace RPG.Combat
 
             if (!GetIsInRage())
             {
-                GetComponent<Mover>().MoveTo(target.transform.position);
+                GetComponent<Mover>().MoveTo(target.transform.position, 1f);
             }
             else
             {

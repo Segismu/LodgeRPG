@@ -16,6 +16,8 @@ namespace RPG.Controls
         [SerializeField] PatrolRoute patrolRoute;
         [SerializeField] float wayPointTolerance = 1f;
         [SerializeField] float wayPointDwellTime = 2f;
+        [Range(0,1)]
+        [SerializeField] float patrolSpeedFraction = 0.5f;
 
         Fight fighter;
         HP hppoints;
@@ -80,7 +82,7 @@ namespace RPG.Controls
 
             if(timeSinceArrivedAtWayPoint > wayPointDwellTime)
             {
-                mover.StartMoveAction(nextPost);
+                mover.StartMoveAction(nextPost, patrolSpeedFraction);
             }
 
         }
