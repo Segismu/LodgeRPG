@@ -3245,6 +3245,10 @@ PrefabInstance:
       value: 5.66
       objectReference: {fileID: 0}
     - target: {fileID: 952692195739352139, guid: 001d2e7b849ed4f91a874a8614242558, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 952692195739352139, guid: 001d2e7b849ed4f91a874a8614242558, type: 3}
       propertyPath: m_Acceleration
       value: 20
       objectReference: {fileID: 0}
@@ -3315,6 +3319,20 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6268340659109256532, guid: 001d2e7b849ed4f91a874a8614242558, type: 3}
   m_PrefabInstance: {fileID: 1239047293240022038}
   m_PrefabAsset: {fileID: 0}
+--- !u!136 &1921592051975001727
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5173620489110899010}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.24
+  m_Height: 1.75
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.98, z: 0}
 --- !u!114 &7669865461509079370
 MonoBehaviour:
   m_ObjectHideFlags: 0
