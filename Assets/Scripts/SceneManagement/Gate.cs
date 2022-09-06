@@ -54,6 +54,8 @@ namespace RPG.SceneManagement
             Gate otherGate = GetOtherGate();
             UpadatePlayer(otherGate);
 
+            wrapper.Save();
+
             yield return new WaitForSeconds(fadeWaitTime);
             yield return fader.FadeIn(fadeInTime);
 
