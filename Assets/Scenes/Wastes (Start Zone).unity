@@ -108,7 +108,7 @@ NavMeshSettings:
     agentTypeID: 0
     agentRadius: 0.5
     agentHeight: 2
-    agentSlope: 45
+    agentSlope: 12.9
     agentClimb: 0.4
     ledgeDropHeight: 0
     maxJumpAcrossDistance: 0
@@ -378,12 +378,16 @@ PrefabInstance:
       value: 2.67
       objectReference: {fileID: 0}
     - target: {fileID: 8156126039039292748, guid: 92775c02647414ca897d0d1d4a4d57de, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.33
+      objectReference: {fileID: 0}
+    - target: {fileID: 8156126039039292748, guid: 92775c02647414ca897d0d1d4a4d57de, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.31
+      value: 0.134
       objectReference: {fileID: 0}
     - target: {fileID: 8156126039039292748, guid: 92775c02647414ca897d0d1d4a4d57de, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.380001
+      value: -1.69
       objectReference: {fileID: 0}
     - target: {fileID: 8156126039039292748, guid: 92775c02647414ca897d0d1d4a4d57de, type: 3}
       propertyPath: m_LocalRotation.w
@@ -588,10 +592,6 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7103341033247442065, guid: dc04f9fcb006f49458bce45ed46287ef, type: 3}
-      propertyPath: uniqueIdentifier
-      value: 99d3577b-0a84-4302-9006-8d55f243ce2e
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc04f9fcb006f49458bce45ed46287ef, type: 3}
 --- !u!1001 &2000401177
@@ -691,7 +691,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8156126039039292748, guid: 92775c02647414ca897d0d1d4a4d57de, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.198
+      value: -1.43
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 92775c02647414ca897d0d1d4a4d57de, type: 3}

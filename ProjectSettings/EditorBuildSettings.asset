@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Town.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
+    path: Assets/Scenes/Town 2.unity
+    guid: c9557a155f6ec49fb86ac63f792a076c
+  - enabled: 0
     path: Assets/Scenes/Wastes (Start Zone).unity
     guid: 85e81ab4165494ac2bb8ca5dcfac158c
   m_configObjects: {}

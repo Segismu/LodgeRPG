@@ -1,6 +1,5 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.SceneManagement;
@@ -44,7 +43,13 @@ namespace RPG.SceneManagement
             Fader fader = FindObjectOfType<Fader>();
 
             yield return fader.FadeOut(fadeOutTime);
+
+            SavingWrapper wrapper = FindObjectOfType<SavingWrapper>();
+            wrapper.Save();
+
             yield return SceneManager.LoadSceneAsync(sceneToLoad);
+
+            wrapper.Load();
 
             Gate otherGate = GetOtherGate();
             UpadatePlayer(otherGate);
@@ -58,7 +63,8 @@ namespace RPG.SceneManagement
         private void UpadatePlayer(Gate otherGate)
         {
             GameObject player = GameObject.FindWithTag("Player");
-            player.GetComponent<NavMeshAgent>().Warp(otherGate.spawnPoint.position);
+
+            player.transform.position = otherGate.spawnPoint.position;
             player.transform.rotation = otherGate.spawnPoint.rotation;
 
         }
