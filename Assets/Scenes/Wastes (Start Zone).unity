@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 23800000, guid: 3d94e37eb94be409cbd51fbddcaae76a, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 831d10cf9fbbf416d9b1c31bde2cc406, type: 2}
 --- !u!1 &76291013
 GameObject:
   m_ObjectHideFlags: 0
@@ -346,12 +346,24 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3678335737023634450, guid: 92775c02647414ca897d0d1d4a4d57de, type: 3}
+      propertyPath: fadeInTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3678335737023634450, guid: 92775c02647414ca897d0d1d4a4d57de, type: 3}
       propertyPath: spawnPoint
       value: 
       objectReference: {fileID: 732054563}
     - target: {fileID: 3678335737023634450, guid: 92775c02647414ca897d0d1d4a4d57de, type: 3}
+      propertyPath: fadeOutTime
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3678335737023634450, guid: 92775c02647414ca897d0d1d4a4d57de, type: 3}
       propertyPath: sceneToLoad
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3678335737023634450, guid: 92775c02647414ca897d0d1d4a4d57de, type: 3}
+      propertyPath: fadeWaitTime
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 5714004032514551826, guid: 92775c02647414ca897d0d1d4a4d57de, type: 3}
       propertyPath: m_Size.x
@@ -639,7 +651,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3678335737023634450, guid: 92775c02647414ca897d0d1d4a4d57de, type: 3}
       propertyPath: fadeInTime
-      value: 1.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3678335737023634450, guid: 92775c02647414ca897d0d1d4a4d57de, type: 3}
       propertyPath: spawnPoint
@@ -651,7 +663,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3678335737023634450, guid: 92775c02647414ca897d0d1d4a4d57de, type: 3}
       propertyPath: fadeOutTime
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 3678335737023634450, guid: 92775c02647414ca897d0d1d4a4d57de, type: 3}
       propertyPath: sceneToLoad
