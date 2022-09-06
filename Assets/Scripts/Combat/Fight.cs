@@ -50,7 +50,7 @@ namespace RPG.Combat
 
         private void TriggerAttack()
         {
-            GetComponent<Animator>().ResetTrigger("stopAttack");
+            GetComponent<Animator>().ResetTrigger("stopHit");
             GetComponent<Animator>().SetTrigger("attack");
         }
 
