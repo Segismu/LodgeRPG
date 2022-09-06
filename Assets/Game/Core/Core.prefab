@@ -212,6 +212,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4129389566065985737}
     m_Modifications:
+    - target: {fileID: 1567855878687227111, guid: afca8e1f1798d4d19be62111c2784e18, type: 3}
+      propertyPath: weaponPrefab
+      value: 
+      objectReference: {fileID: 3175375442886492738, guid: 13858c34ccd2e4852976516f2e3e318a, type: 3}
+    - target: {fileID: 1567855878687227111, guid: afca8e1f1798d4d19be62111c2784e18, type: 3}
+      propertyPath: handTransform
+      value: 
+      objectReference: {fileID: 5409900097734408221}
     - target: {fileID: 5173620489110899010, guid: afca8e1f1798d4d19be62111c2784e18, type: 3}
       propertyPath: m_Name
       value: Player
@@ -270,6 +278,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: afca8e1f1798d4d19be62111c2784e18, type: 3}
+--- !u!4 &5409900097734408221 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8240842499096170354, guid: afca8e1f1798d4d19be62111c2784e18, type: 3}
+  m_PrefabInstance: {fileID: 4129389565978785647}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6402828482687004554 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7031776507929385189, guid: afca8e1f1798d4d19be62111c2784e18, type: 3}
@@ -288,7 +301,7 @@ PrefabInstance:
       objectReference: {fileID: 6402828482687004554}
     - target: {fileID: 8427272786523544274, guid: 03f5f189ce2f84421b799bea5a006552, type: 3}
       propertyPath: m_Lens.m_SensorSize.x
-      value: 1.8867924
+      value: 1.4795918
       objectReference: {fileID: 0}
     - target: {fileID: 8427272786523544276, guid: 03f5f189ce2f84421b799bea5a006552, type: 3}
       propertyPath: m_Name

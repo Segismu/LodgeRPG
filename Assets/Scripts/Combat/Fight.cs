@@ -1,9 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using RPG.Movement;
 using RPG.Core;
-using static UnityEngine.GraphicsBuffer;
 using System;
 
 namespace RPG.Combat
@@ -13,9 +10,16 @@ namespace RPG.Combat
         [SerializeField] float hitRange = 2f;
         [SerializeField] float timeBetweenHits = 1f;
         [SerializeField] float weaponDamage = 5f;
+        [SerializeField] Transform handTransform = null;
+        [SerializeField] Weapon weapon = null;
 
         HP target;
         float timeSinceLastHit = Mathf.Infinity;
+
+        private void Start()
+        {
+            SpawnWeapon();
+        }
 
         private void Update()
         {
@@ -34,6 +38,13 @@ namespace RPG.Combat
                 GetComponent<Mover>().Cancel();
                 AttackBehaviour();
             }
+        }
+
+        private void SpawnWeapon()
+        {
+            if (weapon == null) return;
+            Animator animator = GetComponent<Animator>();
+            weapon.Spawn(handTransform, animator);
         }
 
         private void AttackBehaviour()

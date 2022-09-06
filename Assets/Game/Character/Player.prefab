@@ -3240,6 +3240,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 356873366655985905, guid: 001d2e7b849ed4f91a874a8614242558, type: 3}
+      propertyPath: weapon
+      value: 
+      objectReference: {fileID: 11400000, guid: 92e2c68d29a8b4be5b9f28c8b7d5ec9d, type: 2}
+    - target: {fileID: 356873366655985905, guid: 001d2e7b849ed4f91a874a8614242558, type: 3}
+      propertyPath: weaponPrefab
+      value: 
+      objectReference: {fileID: 3175375442886492738, guid: 13858c34ccd2e4852976516f2e3e318a, type: 3}
+    - target: {fileID: 356873366655985905, guid: 001d2e7b849ed4f91a874a8614242558, type: 3}
+      propertyPath: handTransform
+      value: 
+      objectReference: {fileID: 8240842499096170354}
+    - target: {fileID: 356873366655985905, guid: 001d2e7b849ed4f91a874a8614242558, type: 3}
+      propertyPath: weaponOverride
+      value: 
+      objectReference: {fileID: 22100000, guid: c5629f80ad04d4bf182cac11b0a1fd5b, type: 2}
     - target: {fileID: 952692195739352139, guid: 001d2e7b849ed4f91a874a8614242558, type: 3}
       propertyPath: m_Speed
       value: 5.66
