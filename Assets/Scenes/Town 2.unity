@@ -1908,7 +1908,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3678335737023634450, guid: 92775c02647414ca897d0d1d4a4d57de, type: 3}
       propertyPath: sceneToLoad
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3678335737023634450, guid: 92775c02647414ca897d0d1d4a4d57de, type: 3}
       propertyPath: fadeWaitTime
@@ -5899,7 +5899,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3678335737023634450, guid: 92775c02647414ca897d0d1d4a4d57de, type: 3}
       propertyPath: sceneToLoad
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3678335737023634450, guid: 92775c02647414ca897d0d1d4a4d57de, type: 3}
       propertyPath: fadeWaitTime
