@@ -7,18 +7,18 @@ namespace RPG.Combat
 {
     public class Fight : MonoBehaviour, IAction
     {
-        [SerializeField] float hitRange = 2f;
         [SerializeField] float timeBetweenHits = 1f;
-        [SerializeField] float weaponDamage = 5f;
-        [SerializeField] Transform handTransform = null;
-        [SerializeField] Weapon weapon = null;
+        [SerializeField] Transform rHandTransform = null;
+        [SerializeField] Transform lHandTransform = null;
+        [SerializeField] Weapon baseWeapon = null;
 
         HP target;
         float timeSinceLastHit = Mathf.Infinity;
+        Weapon currentWeapon;
 
         private void Start()
         {
-            SpawnWeapon();
+            EquipWeapon(baseWeapon);
         }
 
         private void Update()
@@ -40,11 +40,11 @@ namespace RPG.Combat
             }
         }
 
-        private void SpawnWeapon()
+        public void EquipWeapon(Weapon weapon)
         {
-            if (weapon == null) return;
+            currentWeapon = weapon;
             Animator animator = GetComponent<Animator>();
-            weapon.Spawn(handTransform, animator);
+            weapon.Spawn(rHandTransform, lHandTransform, animator);
         }
 
         private void AttackBehaviour()
@@ -52,7 +52,6 @@ namespace RPG.Combat
             transform.LookAt(target.transform);
             if (timeSinceLastHit > timeBetweenHits)
             {
-                //This will trigger hit event
                 TriggerAttack();
                 timeSinceLastHit = 0;
             }
@@ -69,12 +68,25 @@ namespace RPG.Combat
         void Hit()
         {
             if (target == null) { return; }
-            target.TakeDamage(weaponDamage);
+
+            if (currentWeapon.HasProjectile())
+            {
+                currentWeapon.LaunchProjectile(rHandTransform, lHandTransform, target);
+            }
+            else
+            {
+                target.TakeDamage(currentWeapon.GetDamage());
+            }
+        }
+
+        void Shoot()
+        {
+            Hit();
         }
 
         private bool GetIsInRage()
         {
-            return Vector3.Distance(transform.position, target.transform.position) < hitRange;
+            return Vector3.Distance(transform.position, target.transform.position) < currentWeapon.GetRange();
         }
 
         public bool CanAttack(GameObject fightTarget)

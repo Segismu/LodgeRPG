@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7552314298629067171}
   m_Layer: 0
-  m_Name: Equiped KevlarBlade
+  m_Name: Equipped Sword
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

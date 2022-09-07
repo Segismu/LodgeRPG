@@ -65,6 +65,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30cf93deff988e74e88a144bd2127c18, type: 3}
+--- !u!4 &210038507760556895 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 423694, guid: 30cf93deff988e74e88a144bd2127c18, type: 3}
+  m_PrefabInstance: {fileID: 210038507760970833}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &210038507760630621 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 481036, guid: 30cf93deff988e74e88a144bd2127c18, type: 3}
+  m_PrefabInstance: {fileID: 210038507760970833}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2235697531130959338
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -78,8 +88,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -5979963395544476645, guid: 001d2e7b849ed4f91a874a8614242558, type: 3}
       propertyPath: hpPoints
-      value: 10
+      value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 356873366655985905, guid: 001d2e7b849ed4f91a874a8614242558, type: 3}
+      propertyPath: weapon
+      value: 
+      objectReference: {fileID: 11400000, guid: 6904c17c579bc426885977491eacfc3c, type: 2}
+    - target: {fileID: 356873366655985905, guid: 001d2e7b849ed4f91a874a8614242558, type: 3}
+      propertyPath: baseWeapon
+      value: 
+      objectReference: {fileID: 11400000, guid: 6904c17c579bc426885977491eacfc3c, type: 2}
+    - target: {fileID: 356873366655985905, guid: 001d2e7b849ed4f91a874a8614242558, type: 3}
+      propertyPath: handTransform
+      value: 
+      objectReference: {fileID: 210038507760556895}
+    - target: {fileID: 356873366655985905, guid: 001d2e7b849ed4f91a874a8614242558, type: 3}
+      propertyPath: lHandTransform
+      value: 
+      objectReference: {fileID: 210038507760630621}
+    - target: {fileID: 356873366655985905, guid: 001d2e7b849ed4f91a874a8614242558, type: 3}
+      propertyPath: rHandTransform
+      value: 
+      objectReference: {fileID: 210038507760556895}
     - target: {fileID: 1642782888232404546, guid: 001d2e7b849ed4f91a874a8614242558, type: 3}
       propertyPath: m_Avatar
       value: 
@@ -178,6 +208,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chaseDistance: 5
+  lookingForPlayerTime: 4
+  patrolRoute: {fileID: 0}
+  wayPointTolerance: 1
+  wayPointDwellTime: 2
+  patrolSpeedFraction: 0.5
 --- !u!4 &8044223364420409625 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8116640502791163123, guid: 001d2e7b849ed4f91a874a8614242558, type: 3}
