@@ -110,6 +110,10 @@ PrefabInstance:
       propertyPath: rHandTransform
       value: 
       objectReference: {fileID: 210038507760556895}
+    - target: {fileID: 952692195739352139, guid: 001d2e7b849ed4f91a874a8614242558, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1642782888232404546, guid: 001d2e7b849ed4f91a874a8614242558, type: 3}
       propertyPath: m_Avatar
       value: 
