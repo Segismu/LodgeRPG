@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c38f7afcdd70745f9b1f8d79699b5e1b, type: 3}
-  m_Name: Bow
+  m_Name: GAR Bow
   m_EditorClassIdentifier: 
   animatorOverride: {fileID: 22100000, guid: 7f1e2fead2e80401ea0c165f1ce3b212, type: 2}
-  equippedPrefab: {fileID: 7291171054431574524, guid: dc7262a3218bd4ecfb507810ede54b77, type: 3}
-  weaponDamage: 3
-  hitRange: 8
+  equippedPrefab: {fileID: 7291171054431574524, guid: 509f40c9442954f07962a289197efe5e, type: 3}
+  weaponDamage: 5
+  hitRange: 10
   isRHanded: 0
-  projectile: {fileID: 8045446629836202792, guid: bb6a91ddd46e9496f9c67e1eea4a4083, type: 3}
+  projectile: {fileID: 1100107692887985018, guid: 6bfeed653338e47709b83a882870954e, type: 3}
