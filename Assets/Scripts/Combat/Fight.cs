@@ -2,10 +2,11 @@ using UnityEngine;
 using RPG.Movement;
 using RPG.Core;
 using System;
+using RPG.Saving;
 
 namespace RPG.Combat
 {
-    public class Fight : MonoBehaviour, IAction
+    public class Fight : MonoBehaviour, IAction, ISaveable
     {
         [SerializeField] float timeBetweenHits = 1f;
         [SerializeField] Transform rHandTransform = null;
@@ -18,7 +19,10 @@ namespace RPG.Combat
 
         private void Start()
         {
-            EquipWeapon(baseWeapon);
+            if (currentWeapon == null)
+            {
+                EquipWeapon(baseWeapon);
+            }
         }
 
         private void Update()
@@ -113,6 +117,25 @@ namespace RPG.Combat
         {
             GetComponent<Animator>().ResetTrigger("attack");
             GetComponent<Animator>().SetTrigger("stopHit");
+        }
+
+        public object CaptureState()
+        {
+            if (baseWeapon == null)
+            {
+                return "Barehand";
+            }
+            else
+            {
+                return currentWeapon.name;
+            }
+        }
+
+        public void RestoreState(object state)
+        {
+            string weaponName = (string)state;
+            Weapon weapon = Resources.Load<Weapon>(weaponName);
+            EquipWeapon(weapon);
         }
     }
 }

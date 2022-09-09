@@ -2635,6 +2635,10 @@ PrefabInstance:
       propertyPath: baseWeapon
       value: 
       objectReference: {fileID: 11400000, guid: 7724478f573d7447491154a5104efdba, type: 2}
+    - target: {fileID: 2014539912947481883, guid: 0d2b28b0fc68c418aa176c3c516a20cf, type: 3}
+      propertyPath: defaultWeaponName
+      value: HomingBow
+      objectReference: {fileID: 0}
     - target: {fileID: 3227626116580512228, guid: 0d2b28b0fc68c418aa176c3c516a20cf, type: 3}
       propertyPath: patrolRoute
       value: 
@@ -5359,6 +5363,10 @@ PrefabInstance:
       propertyPath: baseWeapon
       value: 
       objectReference: {fileID: 11400000, guid: 8bbd8497dc6a84e03a3ff6f8fa6f991b, type: 2}
+    - target: {fileID: 2310095277909352778, guid: 4a19e6ae9311d48758d98eeacf90a864, type: 3}
+      propertyPath: defaultWeaponName
+      value: GAR Bow
+      objectReference: {fileID: 0}
     - target: {fileID: 6077850196595803464, guid: 4a19e6ae9311d48758d98eeacf90a864, type: 3}
       propertyPath: m_RootOrder
       value: 14
@@ -8083,7 +8091,7 @@ PrefabInstance:
     - target: {fileID: 3210131347858672520, guid: dc04f9fcb006f49458bce45ed46287ef, type: 3}
       propertyPath: baseWeapon
       value: 
-      objectReference: {fileID: 11400000, guid: 6904c17c579bc426885977491eacfc3c, type: 2}
+      objectReference: {fileID: 11400000, guid: 92e2c68d29a8b4be5b9f28c8b7d5ec9d, type: 2}
     - target: {fileID: 3635001327049271816, guid: dc04f9fcb006f49458bce45ed46287ef, type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.03838241
