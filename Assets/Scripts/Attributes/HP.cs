@@ -10,12 +10,15 @@ namespace RPG.Attributes
 {
     public class HP : MonoBehaviour, ISaveable
     {
+        [SerializeField] float regenPercentage = 80;
+
         float hpPoints = -1f;
 
         bool isDead = false;
 
         private void Start()
         {
+            GetComponent<BaseStats>().onLevelUp += RegenerateHP;
             if (hpPoints < 0)
             {
                 hpPoints = GetComponent<BaseStats>().GetStat(Stat.HP);
@@ -64,6 +67,12 @@ namespace RPG.Attributes
         public object CaptureState()
         {
             return hpPoints;
+        }
+
+        private void RegenerateHP()
+        {
+            float regenHPPoints = GetComponent<BaseStats>().GetStat(Stat.HP) * (regenPercentage / 100);
+            hpPoints = Mathf.Max(hpPoints, regenHPPoints);
         }
 
         public void RestoreState(object state)
