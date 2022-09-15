@@ -3293,6 +3293,10 @@ PrefabInstance:
       value: 1200
       objectReference: {fileID: 0}
     - target: {fileID: 1331457243446299191, guid: 001d2e7b849ed4f91a874a8614242558, type: 3}
+      propertyPath: usingMods
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1331457243446299191, guid: 001d2e7b849ed4f91a874a8614242558, type: 3}
       propertyPath: characterClass
       value: 0
       objectReference: {fileID: 0}

@@ -4,10 +4,11 @@ using RPG.Core;
 using RPG.Saving;
 using RPG.Attributes;
 using RPG.Stats;
+using System.Collections.Generic;
 
 namespace RPG.Combat
 {
-    public class Fight : MonoBehaviour, IAction, ISaveable
+    public class Fight : MonoBehaviour, IAction, ISaveable, IModProvider
     {
         [SerializeField] float timeBetweenHits = 1f;
         [SerializeField] Transform rHandTransform = null;
@@ -124,6 +125,22 @@ namespace RPG.Combat
         {
             GetComponent<Animator>().ResetTrigger("attack");
             GetComponent<Animator>().SetTrigger("stopHit");
+        }
+
+        public IEnumerable<float> GetAdditiveMod(Stat stat)
+        {
+            if (stat == Stat.Damage)
+            {
+                yield return currentWeapon.GetDamage();
+            }
+        }
+
+        public IEnumerable<float> GetPercentageMod(Stat stat)
+        {
+            if (stat == Stat.Damage)
+            {
+                yield return currentWeapon.GetPercentageBonus();
+            }
         }
 
         public object CaptureState()

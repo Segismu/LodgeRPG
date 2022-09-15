@@ -12,6 +12,7 @@ namespace RPG.Stats
         [SerializeField] CharacterClass characterClass;
         [SerializeField] Progression progression = null;
         [SerializeField] GameObject levelUpParticleVFX = null;
+        [SerializeField] bool usingMods = false;
 
         public event Action onLevelUp;
 
@@ -45,6 +46,11 @@ namespace RPG.Stats
 
         public float GetStat(Stat stat)
         {
+            return (GetBaseStat(stat) + GetAdditiveMod(stat)) * (1 + GetPercertageMod(stat)/100);
+        }
+
+        private float GetBaseStat(Stat stat)
+        {
             return progression.GetStat(stat, characterClass, GetLevel());
         }
 
@@ -58,7 +64,40 @@ namespace RPG.Stats
             return currentLevel;
         }
 
-        public int CalculateLevel()
+
+        private float GetAdditiveMod(Stat stat)
+        {
+            if (!usingMods) return 0;
+
+            float total = 0;
+            foreach (IModProvider provider in GetComponents<IModProvider>())
+            {
+                foreach (float modifier in provider.GetAdditiveMod(stat))
+                {
+                    total += modifier;
+                }
+
+            }
+            return total;
+        }
+
+        private float GetPercertageMod(Stat stat)
+        {
+            if (!usingMods) return 0;
+
+            float total = 0;
+            foreach (IModProvider provider in GetComponents<IModProvider>())
+            {
+                foreach (float modifier in provider.GetPercentageMod(stat))
+                {
+                    total += modifier;
+                }
+
+            }
+            return total;
+        }
+
+        private int CalculateLevel()
         {
             Experience experience = GetComponent<Experience>();
             if (experience == null) return baseLevel;
