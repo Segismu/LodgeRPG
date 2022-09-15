@@ -18,7 +18,7 @@ namespace RPG.SceneManagement
         [SerializeField] DestinationIdentifier destination;
         [SerializeField] float fadeOutTime = 0.5f;
         [SerializeField] float fadeInTime = 1f;
-        [SerializeField] float fadeWaitTime = .1f;
+        [SerializeField] float fadeWaitTime = 1f;
 
         private void OnTriggerEnter(Collider other)
         {
