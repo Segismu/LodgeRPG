@@ -16,7 +16,7 @@ namespace RPG.Attributes
 
         bool isDead = false;
 
-        private void Awake()
+        private void Start()
         {
             GetComponent<BaseStats>().onLevelUp += RegenerateHP;
             if (hpPoints < 0)

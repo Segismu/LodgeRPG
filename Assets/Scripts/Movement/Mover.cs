@@ -17,10 +17,15 @@ namespace RPG.Movement
         NavMeshAgent navMeshAgent;
         HP hppoints;
 
-        private void Start()
+        private void Awake()
         {
             navMeshAgent = GetComponent<NavMeshAgent>();
             hppoints = GetComponent<HP>();
+        }
+
+        private void Start()
+        {
+
         }
 
         void Update()
