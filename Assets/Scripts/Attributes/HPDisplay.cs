@@ -15,7 +15,7 @@ namespace RPG.Attributes
 
         private void Update()
         {
-            GetComponent<Text>().text = string.Format("{0:0}%", hp.GetPercentage());
+            GetComponent<Text>().text = String.Format("{0:0}/{1:0}", hp.GetHpPoints(), hp.GetMaxHpPoints());
         }
     }
 }
