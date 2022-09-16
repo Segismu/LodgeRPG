@@ -12,7 +12,7 @@ namespace RPG.Controls
     {
         HP hppoints;
 
-        private void Start()
+        private void Awake()
         {
             hppoints = GetComponent<HP>();
         }

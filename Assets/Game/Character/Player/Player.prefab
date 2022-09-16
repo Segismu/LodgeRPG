@@ -3272,6 +3272,10 @@ PrefabInstance:
       propertyPath: defaultWeaponName
       value: Sword
       objectReference: {fileID: 0}
+    - target: {fileID: 437684848912790744, guid: 001d2e7b849ed4f91a874a8614242558, type: 3}
+      propertyPath: maxSpeed
+      value: 5.6
+      objectReference: {fileID: 0}
     - target: {fileID: 952692195739352139, guid: 001d2e7b849ed4f91a874a8614242558, type: 3}
       propertyPath: m_Speed
       value: 5.66
@@ -3308,6 +3312,14 @@ PrefabInstance:
       propertyPath: m_Avatar
       value: 
       objectReference: {fileID: 9000000, guid: 568f0b900fd739c4ab43b42b1efa44fe, type: 3}
+    - target: {fileID: 1642782888232404546, guid: 001d2e7b849ed4f91a874a8614242558, type: 3}
+      propertyPath: m_UpdateMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1642782888232404546, guid: 001d2e7b849ed4f91a874a8614242558, type: 3}
+      propertyPath: m_CullingMode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5398496627764635624, guid: 001d2e7b849ed4f91a874a8614242558, type: 3}
       propertyPath: uniqueIdentifier
       value: player

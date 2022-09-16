@@ -23,11 +23,6 @@ namespace RPG.Movement
             hppoints = GetComponent<HP>();
         }
 
-        private void Start()
-        {
-
-        }
-
         void Update()
         {
             navMeshAgent.enabled = !hppoints.IsDead();

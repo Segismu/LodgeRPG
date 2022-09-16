@@ -5,6 +5,7 @@ using RPG.Saving;
 using RPG.Stats;
 using RPG.Core;
 using System;
+using GameDevTV.Utils;
 
 namespace RPG.Attributes
 {
@@ -12,18 +13,33 @@ namespace RPG.Attributes
     {
         [SerializeField] float regenPercentage = 80;
 
-        float hpPoints = -1f;
+        LazyValue<float> hpPoints;
 
         bool isDead = false;
 
+        private void Awake()
+        {
+            hpPoints = new LazyValue<float>(GetInitialHP);
+        }
+
+        private float GetInitialHP()
+        {
+            return GetComponent<BaseStats>().GetStat(Stat.HP);
+        }
+
         private void Start()
         {
-            GetComponent<BaseStats>().onLevelUp += RegenerateHP;
-            if (hpPoints < 0)
-            {
-                hpPoints = GetComponent<BaseStats>().GetStat(Stat.HP);
-            }
+            hpPoints.ForceInit();
+        }
 
+        private void OnEnable()
+        {
+            GetComponent<BaseStats>().onLevelUp += RegenerateHP;
+        }
+
+        private void OnDisable()
+        {
+            GetComponent<BaseStats>().onLevelUp -= RegenerateHP;
         }
 
         public bool IsDead()
@@ -35,9 +51,9 @@ namespace RPG.Attributes
         {
             print(gameObject.name + " took damage: " + damage);
 
-            hpPoints = Mathf.Max(hpPoints - damage, 0);
+            hpPoints.value = Mathf.Max(hpPoints.value - damage, 0);
 
-            if (hpPoints <= 0)
+            if (hpPoints.value <= 0)
             {
                 Die();
                 AwardExp(instigator);
@@ -46,7 +62,7 @@ namespace RPG.Attributes
 
         public float GetHpPoints()
         {
-            return hpPoints;
+            return hpPoints.value;
         }
 
         public float GetMaxHpPoints()
@@ -56,7 +72,7 @@ namespace RPG.Attributes
 
         public float GetPercentage()
         {
-            return 100 * (hpPoints / GetComponent<BaseStats>().GetStat(Stat.HP));
+            return 100 * (hpPoints.value / GetComponent<BaseStats>().GetStat(Stat.HP));
         }
 
         private void Die()
@@ -78,20 +94,20 @@ namespace RPG.Attributes
 
         public object CaptureState()
         {
-            return hpPoints;
+            return hpPoints.value;
         }
 
         private void RegenerateHP()
         {
             float regenHPPoints = GetComponent<BaseStats>().GetStat(Stat.HP) * (regenPercentage / 100);
-            hpPoints = Mathf.Max(hpPoints, regenHPPoints);
+            hpPoints.value = Mathf.Max(hpPoints.value, regenHPPoints);
         }
 
         public void RestoreState(object state)
         {
-            hpPoints = (float) state;
+            hpPoints.value = (float) state;
 
-            if (hpPoints <= 0)
+            if (hpPoints.value <= 0)
             {
                 Die();
             }
