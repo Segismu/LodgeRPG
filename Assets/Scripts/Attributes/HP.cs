@@ -6,12 +6,18 @@ using RPG.Stats;
 using RPG.Core;
 using System;
 using GameDevTV.Utils;
+using UnityEngine.Events;
 
 namespace RPG.Attributes
 {
     public class HP : MonoBehaviour, ISaveable
     {
         [SerializeField] float regenPercentage = 80;
+        [SerializeField] TakeDamageEvent takeDamage;
+
+        [System.Serializable]
+        public class TakeDamageEvent : UnityEvent<float>
+        {}
 
         LazyValue<float> hpPoints;
 
@@ -57,6 +63,10 @@ namespace RPG.Attributes
             {
                 Die();
                 AwardExp(instigator);
+            }
+            else
+            {
+                takeDamage.Invoke(damage);
             }
         }
 
