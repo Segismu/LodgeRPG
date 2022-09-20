@@ -10,7 +10,7 @@ namespace RPG.Combat
     public class Weapon : ScriptableObject
     {
         [SerializeField] AnimatorOverrideController animatorOverride = null;
-        [SerializeField] GameObject equippedPrefab = null;
+        [SerializeField] WeaponComponents equippedPrefab = null;
         [SerializeField] float weaponDamage = 5f;
         [SerializeField] float percentageBonus = 0f;
         [SerializeField] float hitRange = 2f;
@@ -26,8 +26,8 @@ namespace RPG.Combat
             if (equippedPrefab != null)
             {
                 Transform handTransform = GetTransform(rHand, lHand);
-                GameObject weapon = Instantiate(equippedPrefab, handTransform);
-                weapon.name = weaponName;
+                WeaponComponents weapon = Instantiate(equippedPrefab, handTransform);
+                weapon.gameObject.name = weaponName;
             }
 
             var overrifeController = animator.runtimeAnimatorController as AnimatorOverrideController;
