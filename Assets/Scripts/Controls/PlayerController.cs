@@ -26,7 +26,7 @@ namespace RPG.Controls
 
         [SerializeField] CursorMapping[] cursorMappings = null;
         [SerializeField] float maxNavMeshProjectionDistance = 1f;
-        [SerializeField] float maxNavPathLength = 30f;
+        [SerializeField] float maxNavPathLength = 50f;
 
         private void Awake()
         {
