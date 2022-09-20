@@ -124,6 +124,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hpComponent: {fileID: 3604056139190026737, guid: 0d2b28b0fc68c418aa176c3c516a20cf, type: 3}
   foreground: {fileID: 6530133141065707145}
+  rootCanvas: {fileID: 61937557855577594}
 --- !u!1 &4183375282999654456
 GameObject:
   m_ObjectHideFlags: 0
