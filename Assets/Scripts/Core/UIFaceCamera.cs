@@ -6,7 +6,7 @@ namespace RPG.Core
 {
     public class UIFaceCamera : MonoBehaviour
     {
-        private void Update()
+        private void LateUpdate()
         {
             transform.forward = Camera.main.transform.forward;
         }
