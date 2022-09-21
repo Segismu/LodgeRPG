@@ -46,7 +46,7 @@ namespace RPG.Combat
 
             if (target.IsDead()) return;
 
-            if (!GetIsInRage())
+            if (!GetIsInRage(target.transform))
             {
                 GetComponent<Mover>().MoveTo(target.transform.position, 1f);
             }
@@ -118,15 +118,15 @@ namespace RPG.Combat
             Hit();
         }
 
-        private bool GetIsInRage()
+        private bool GetIsInRage(Transform targetTransform)
         {
-            return Vector3.Distance(transform.position, target.transform.position) < currentWeapon.GetRange();
+            return Vector3.Distance(transform.position, targetTransform.position) < currentWeapon.GetRange();
         }
 
         public bool CanAttack(GameObject fightTarget)
         {
             if (fightTarget == null) { return false; }
-            if (!GetComponent<Mover>().CanMoveTo(fightTarget.transform.position)) { return false; }
+            if (!GetComponent<Mover>().CanMoveTo(fightTarget.transform.position) && !GetIsInRage(fightTarget.transform)) { return false; }
             HP targetToTest = fightTarget.GetComponent<HP>();
             return targetToTest != null && !targetToTest.IsDead();
         }
