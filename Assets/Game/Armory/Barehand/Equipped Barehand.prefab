@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7552314298629067171}
   - component: {fileID: -4297625586485524899}
   m_Layer: 0
-  m_Name: Equipped Sword
+  m_Name: Equipped Barehand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30,7 +30,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8614518632984538192}
-  - {fileID: 6072743071376755721}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 2.403, y: -35.711, z: 84.24}
@@ -103,9 +102,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 86cfbdbcf217345678ce32a98980c1ab, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 2621eae48181445a5888836cf500389e, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.544
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -189,77 +188,3 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!1001 &6077596834385842909
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 7552314298629067171}
-    m_Modifications:
-    - target: {fileID: 1423947499427634, guid: 24c5122ffd9aafd4087770dc3cd0998c, type: 3}
-      propertyPath: m_Name
-      value: Sword
-      objectReference: {fileID: 0}
-    - target: {fileID: 4857336828731092, guid: 24c5122ffd9aafd4087770dc3cd0998c, type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4857336828731092, guid: 24c5122ffd9aafd4087770dc3cd0998c, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4857336828731092, guid: 24c5122ffd9aafd4087770dc3cd0998c, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 4857336828731092, guid: 24c5122ffd9aafd4087770dc3cd0998c, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4857336828731092, guid: 24c5122ffd9aafd4087770dc3cd0998c, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4857336828731092, guid: 24c5122ffd9aafd4087770dc3cd0998c, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4857336828731092, guid: 24c5122ffd9aafd4087770dc3cd0998c, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4857336828731092, guid: 24c5122ffd9aafd4087770dc3cd0998c, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4857336828731092, guid: 24c5122ffd9aafd4087770dc3cd0998c, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4857336828731092, guid: 24c5122ffd9aafd4087770dc3cd0998c, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4857336828731092, guid: 24c5122ffd9aafd4087770dc3cd0998c, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4857336828731092, guid: 24c5122ffd9aafd4087770dc3cd0998c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4857336828731092, guid: 24c5122ffd9aafd4087770dc3cd0998c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4857336828731092, guid: 24c5122ffd9aafd4087770dc3cd0998c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 24c5122ffd9aafd4087770dc3cd0998c, type: 3}
---- !u!4 &6072743071376755721 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4857336828731092, guid: 24c5122ffd9aafd4087770dc3cd0998c, type: 3}
-  m_PrefabInstance: {fileID: 6077596834385842909}
-  m_PrefabAsset: {fileID: 0}

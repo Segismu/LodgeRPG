@@ -13,6 +13,9 @@ MonoBehaviour:
   m_Name: Barehand
   m_EditorClassIdentifier: 
   animatorOverride: {fileID: 0}
-  equippedPrefab: {fileID: 0}
+  equippedPrefab: {fileID: -4297625586485524899, guid: c0f09e4ab0b184226b72481695c90a46, type: 3}
   weaponDamage: 2
+  percentageBonus: 0
   hitRange: 2
+  isRHanded: 1
+  projectile: {fileID: 0}
