@@ -14,12 +14,13 @@ namespace RPG.Controls
     public class AIController : MonoBehaviour
     {
         [SerializeField] float chaseDistance = 5f;
-        [SerializeField] float lookingForPlayerTime = 4f;
+        [SerializeField] float lookingForPlayerTime = 3f;
+        [SerializeField] float aggroCooldown = 5f;
         [SerializeField] PatrolRoute patrolRoute;
         [SerializeField] float wayPointTolerance = 1f;
-        [SerializeField] float wayPointDwellTime = 2f;
+        [SerializeField] float wayPointDwellTime = 3f;
         [Range(0,1)]
-        [SerializeField] float patrolSpeedFraction = 0.5f;
+        [SerializeField] float patrolSpeedFraction = 0.2f;
 
         Fight fighter;
         HP hppoints;
@@ -29,6 +30,7 @@ namespace RPG.Controls
         LazyValue<Vector3> guardPost;
         float timeSinceLastSawPlayer = Mathf.Infinity;
         float timeSinceArrivedAtWayPoint = Mathf.Infinity;
+        float timeSinceAggro = Mathf.Infinity;
         int currentWayPointIndex = 0;
 
         private void Awake()
@@ -56,7 +58,7 @@ namespace RPG.Controls
         {
             if (hppoints.IsDead()) return;
 
-            if (InAttackRangeOfPlayer() && fighter.CanAttack(player))
+            if (isAggrevated() && fighter.CanAttack(player))
             {
                 AttackBehaviour();
             }
@@ -72,10 +74,16 @@ namespace RPG.Controls
             UpdateTimers();
         }
 
+        public void Aggro()
+        {
+            timeSinceAggro = 0;
+        }
+
         private void UpdateTimers()
         {
             timeSinceLastSawPlayer += Time.deltaTime;
             timeSinceArrivedAtWayPoint += Time.deltaTime;
+            timeSinceAggro += Time.deltaTime;
         }
 
         private void PatrolBehaviour()
@@ -126,10 +134,10 @@ namespace RPG.Controls
             fighter.Attack(player);
         }
 
-        private bool InAttackRangeOfPlayer()
+        private bool isAggrevated()
         {
             float distanceToPlayer = Vector3.Distance(player.transform.position, transform.position);
-            return distanceToPlayer < chaseDistance;
+            return distanceToPlayer < chaseDistance || timeSinceAggro < aggroCooldown;
         }
 
         private void OnDrawGizmosSelected()
