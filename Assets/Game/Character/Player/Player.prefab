@@ -3619,7 +3619,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 437684848912790744, guid: 001d2e7b849ed4f91a874a8614242558, type: 3}
       propertyPath: maxSpeed
-      value: 5.6
+      value: 5.662317
       objectReference: {fileID: 0}
     - target: {fileID: 952692195739352139, guid: 001d2e7b849ed4f91a874a8614242558, type: 3}
       propertyPath: m_Speed
@@ -3804,7 +3804,7 @@ MonoBehaviour:
     texture: {fileID: 2800000, guid: f8c873f1e53e83f4aabf342d6be1dfc3, type: 3}
     hotspot: {x: 0, y: 0}
   maxNavMeshProjectionDistance: 1
-  maxNavPathLength: 30
+  raycastRadius: 1
 --- !u!4 &7031776507929385189 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8116640502791163123, guid: 001d2e7b849ed4f91a874a8614242558, type: 3}
