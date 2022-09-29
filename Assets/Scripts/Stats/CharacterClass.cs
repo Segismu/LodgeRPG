@@ -5,6 +5,7 @@
         Player,
         Mob,
         Archer,
-        Mage
+        Mage,
+        HoloBoss
     }
 }

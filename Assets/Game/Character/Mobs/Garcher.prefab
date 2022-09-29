@@ -19,6 +19,10 @@ PrefabInstance:
       propertyPath: baseWeapon
       value: 
       objectReference: {fileID: 11400000, guid: 8bbd8497dc6a84e03a3ff6f8fa6f991b, type: 2}
+    - target: {fileID: 2014539912947481883, guid: 0d2b28b0fc68c418aa176c3c516a20cf, type: 3}
+      propertyPath: timeBetweenHits
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3227626116580512228, guid: 0d2b28b0fc68c418aa176c3c516a20cf, type: 3}
       propertyPath: chaseDistance
       value: 10
@@ -26,6 +30,10 @@ PrefabInstance:
     - target: {fileID: 5330948667280918718, guid: 0d2b28b0fc68c418aa176c3c516a20cf, type: 3}
       propertyPath: m_Name
       value: Garcher
+      objectReference: {fileID: 0}
+    - target: {fileID: 6515933321135563992, guid: 0d2b28b0fc68c418aa176c3c516a20cf, type: 3}
+      propertyPath: m_Radius
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 7145312021542980814, guid: 0d2b28b0fc68c418aa176c3c516a20cf, type: 3}
       propertyPath: m_IsActive

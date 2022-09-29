@@ -551,7 +551,7 @@ MonoBehaviour:
   wayPointTolerance: 1
   wayPointDwellTime: 2
   patrolSpeedFraction: 0.5
-  shoutDistance: 4
+  shoutDistance: 2
 --- !u!4 &8044223364420409625 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8116640502791163123, guid: 001d2e7b849ed4f91a874a8614242558, type: 3}

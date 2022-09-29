@@ -6,15 +6,21 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 0
-    path: Assets/Scenes/Town.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
+    path: Assets/Scenes/MainCity.unity
+    guid: 969180d54e5bd4c2ea9f5150a3bc0985
+  - enabled: 1
+    path: Assets/Scenes/BossRoom.unity
+    guid: 5378215f32d884ea685abedd7e997c8c
+  - enabled: 0
     path: Assets/Scenes/Town 2.unity
     guid: c9557a155f6ec49fb86ac63f792a076c
   - enabled: 0
-    path: Assets/Scenes/Wastes (Start Zone).unity
-    guid: 85e81ab4165494ac2bb8ca5dcfac158c
-  - enabled: 1
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
     path: Assets/Scenes/Town 3.unity
     guid: c51a5f1f2124e4409b918a5578eac520
   m_configObjects: {}

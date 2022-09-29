@@ -1,0 +1,79 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &2847665804787654419
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2310095277909352778, guid: 4a19e6ae9311d48758d98eeacf90a864, type: 3}
+      propertyPath: baseWeapon
+      value: 
+      objectReference: {fileID: 11400000, guid: 6904c17c579bc426885977491eacfc3c, type: 2}
+    - target: {fileID: 2517016349726719331, guid: 4a19e6ae9311d48758d98eeacf90a864, type: 3}
+      propertyPath: maxSpeed
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3928981979239220108, guid: 4a19e6ae9311d48758d98eeacf90a864, type: 3}
+      propertyPath: characterClass
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6077850196595803464, guid: 4a19e6ae9311d48758d98eeacf90a864, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6077850196595803464, guid: 4a19e6ae9311d48758d98eeacf90a864, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6077850196595803464, guid: 4a19e6ae9311d48758d98eeacf90a864, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6077850196595803464, guid: 4a19e6ae9311d48758d98eeacf90a864, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6077850196595803464, guid: 4a19e6ae9311d48758d98eeacf90a864, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.5055021
+      objectReference: {fileID: 0}
+    - target: {fileID: 6077850196595803464, guid: 4a19e6ae9311d48758d98eeacf90a864, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6077850196595803464, guid: 4a19e6ae9311d48758d98eeacf90a864, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.86282545
+      objectReference: {fileID: 0}
+    - target: {fileID: 6077850196595803464, guid: 4a19e6ae9311d48758d98eeacf90a864, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6077850196595803464, guid: 4a19e6ae9311d48758d98eeacf90a864, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6077850196595803464, guid: 4a19e6ae9311d48758d98eeacf90a864, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -119.271
+      objectReference: {fileID: 0}
+    - target: {fileID: 6077850196595803464, guid: 4a19e6ae9311d48758d98eeacf90a864, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6400040125755841091, guid: 4a19e6ae9311d48758d98eeacf90a864, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6400586279125779011, guid: 4a19e6ae9311d48758d98eeacf90a864, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8214947919012533487, guid: 4a19e6ae9311d48758d98eeacf90a864, type: 3}
+      propertyPath: m_Name
+      value: Holo Queen Boss
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4a19e6ae9311d48758d98eeacf90a864, type: 3}
