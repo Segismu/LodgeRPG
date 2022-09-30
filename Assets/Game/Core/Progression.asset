@@ -49,7 +49,7 @@ MonoBehaviour:
       - 1600
       - 1700
       - 1800
-      - 1900
+      - 3500
       - 20000
     - stat: 3
       levels:
@@ -172,7 +172,7 @@ MonoBehaviour:
       - 2500
     - stat: 1
       levels:
-      - 2000
+      - 3000
     - stat: 3
       levels:
       - 50
