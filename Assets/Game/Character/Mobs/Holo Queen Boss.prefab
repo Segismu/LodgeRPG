@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 2310095277909352778, guid: 4a19e6ae9311d48758d98eeacf90a864, type: 3}
       propertyPath: baseWeapon
       value: 
-      objectReference: {fileID: 11400000, guid: 6904c17c579bc426885977491eacfc3c, type: 2}
+      objectReference: {fileID: 11400000, guid: c59a01f9818054adbb24af7867721ae8, type: 2}
     - target: {fileID: 2517016349726719331, guid: 4a19e6ae9311d48758d98eeacf90a864, type: 3}
       propertyPath: maxSpeed
       value: 7

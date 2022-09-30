@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7552314298629067171}
-  - component: {fileID: 6266564876573442126}
+  - component: {fileID: -1476277906487138483}
   m_Layer: 0
   m_Name: Equipped Kevlar VoidBlade
   m_TagString: Untagged
@@ -33,7 +33,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 2.403, y: -35.711, z: 84.24}
---- !u!114 &6266564876573442126
+--- !u!114 &-1476277906487138483
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -42,11 +42,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 3175375442886492738}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0004f95c1ee344ae2b9e04d1d5f8c1c4, type: 3}
+  m_Script: {fileID: 11500000, guid: 6149a66cc8f9d426a8ab85dd59dd6f1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon: {fileID: 0}
-  respawnTime: 4
+  onHit:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 251859116687006552, guid: 13858c34ccd2e4852976516f2e3e318a, type: 3}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &7569152642722359086
 PrefabInstance:
   m_ObjectHideFlags: 0
