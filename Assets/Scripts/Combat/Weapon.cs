@@ -2,12 +2,13 @@ using System;
 using RPG.Core;
 using UnityEngine;
 using RPG.Attributes;
+using GameDevTV.Inventories;
 
 namespace RPG.Combat
 {
     [CreateAssetMenu(fileName = "Weapon", menuName = "LodgeRPG/Weapons", order = 0)]
 
-    public class Weapon : ScriptableObject
+    public class Weapon : EquipableItem
     {
         [SerializeField] AnimatorOverrideController animatorOverride = null;
         [SerializeField] WeaponComponents equippedPrefab = null;

@@ -7,6 +7,7 @@ using RPG.Stats;
 using System.Collections.Generic;
 using GameDevTV.Utils;
 using System;
+using GameDevTV.Inventories;
 
 namespace RPG.Combat
 {
@@ -18,6 +19,7 @@ namespace RPG.Combat
         [SerializeField] Weapon baseWeapon = null;
 
         HP target;
+        Equipment equipment;
         float timeSinceLastHit = Mathf.Infinity;
         Weapon currentWeapon;
         LazyValue<WeaponComponents> currentWeaponNow;
@@ -26,6 +28,12 @@ namespace RPG.Combat
         {
             currentWeapon = baseWeapon;
             currentWeaponNow = new LazyValue<WeaponComponents>(SetupBaseWeapon);
+
+            equipment = GetComponent<Equipment>();
+            if (equipment)
+            {
+                equipment.equipmentUpdated += UpdateWeapon;
+            }
         }
 
         private WeaponComponents SetupBaseWeapon()
@@ -61,6 +69,19 @@ namespace RPG.Combat
         {
             currentWeapon = weapon;
             currentWeaponNow.value = AttachWeapon(weapon);
+        }
+
+        private void UpdateWeapon()
+        {
+            var weapon = equipment.GetItemInSlot(EquipLocation.Weapon) as Weapon;
+            if (weapon == null)
+            {
+                EquipWeapon(baseWeapon);
+            }
+            else
+            {
+                EquipWeapon(weapon);
+            }
         }
 
         private WeaponComponents AttachWeapon(Weapon weapon)
