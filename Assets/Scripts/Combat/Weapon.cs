@@ -3,12 +3,14 @@ using RPG.Core;
 using UnityEngine;
 using RPG.Attributes;
 using GameDevTV.Inventories;
+using RPG.Stats;
+using System.Collections.Generic;
 
 namespace RPG.Combat
 {
     [CreateAssetMenu(fileName = "Weapon", menuName = "LodgeRPG/Weapons", order = 0)]
 
-    public class Weapon : EquipableItem
+    public class Weapon : EquipableItem, IModProvider
     {
         [SerializeField] AnimatorOverrideController animatorOverride = null;
         [SerializeField] WeaponComponents equippedPrefab = null;
@@ -93,6 +95,22 @@ namespace RPG.Combat
         public float GetRange()
         {
             return hitRange;
+        }
+
+        public IEnumerable<float> GetAdditiveMod(Stat stat)
+        {
+            if (stat == Stat.Damage)
+            {
+                yield return weaponDamage;
+            }
+        }
+
+        public IEnumerable<float> GetPercentageMod(Stat stat)
+        {
+            if (stat == Stat.Damage)
+            {
+                yield return percentageBonus;
+            }
         }
     }
 }
