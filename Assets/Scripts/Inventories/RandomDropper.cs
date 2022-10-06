@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using GameDevTV.Inventories;
 using UnityEngine.AI;
+using RPG.Stats;
+using static UnityEditor.Progress;
 
 namespace RPG.Inventories
 {
@@ -10,17 +12,18 @@ namespace RPG.Inventories
     {
         [Tooltip("How far can the llot spawn from the dropper.")]
         [SerializeField] float scatterDistance = 1;
-        [SerializeField] InventoryItem[] dropLibrary;
-        [SerializeField] int numberOfDrops = 1;
+        [SerializeField] DropLibrary dropLibrary;
 
         const int ATTEMPS = 30;
 
         public void RandomDrop()
         {
-            for (int i = 0; i < numberOfDrops; i++)
+            var baseStats = GetComponent<BaseStats>();
+
+            var drops = dropLibrary.GetRandomDrops(baseStats.GetLevel());
+            foreach (var drop in drops)
             {
-                var item = dropLibrary[Random.Range(0, dropLibrary.Length)];
-                DropItem(item, 1);
+                DropItem(drop.item, drop.number);
             }
         }
 
