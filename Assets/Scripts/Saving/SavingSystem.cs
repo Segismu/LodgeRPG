@@ -52,9 +52,7 @@ namespace GameDevTV.Saving
             File.Delete(GetPathFromSaveFile(saveFile));
         }
 
-        // PRIVATE
-
-        private void Load(string saveFile)
+        public void Load(string saveFile)
         {
             RestoreState(LoadFile(saveFile));
         }
