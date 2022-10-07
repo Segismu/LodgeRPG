@@ -134,8 +134,8 @@ namespace GameDevTV.Core.UI.Dragging
 
             // Abort if we can't do a successful swap
             if (source.MaxAcceptable(removedDestinationItem) < removedDestinationNumber ||
-                destination.MaxAcceptable(removedSourceItem) < removedSourceNumber ||
-                removedSourceNumber == 0)
+             destination.MaxAcceptable(removedSourceItem) < removedSourceNumber ||
+             removedSourceNumber == 0)
             {
                 if (removedDestinationNumber > 0)
                 {
