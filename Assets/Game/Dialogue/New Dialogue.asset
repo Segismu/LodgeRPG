@@ -15,10 +15,22 @@ MonoBehaviour:
   nodes:
   - uniqueID: a
     text: Hola Pirola
-    children: []
-    position:
+    children:
+    - Loqueras
+    - Son
+    rect:
       serializedVersion: 2
-      x: 30
-      y: 30
+      x: 327
+      y: 53.5
       width: 200
-      height: 100
+      height: 150
+  - uniqueID: b
+    text: MamoswinEEE
+    children:
+    - asdasdsadsa
+    rect:
+      serializedVersion: 2
+      x: 97
+      y: 152.5
+      width: 200
+      height: 150

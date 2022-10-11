@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
@@ -10,6 +11,8 @@ namespace RPG.Dialogue.Editor
     {
         Dialogue selectedDialogue = null;
         GUIStyle nodeStyle;
+        DialogueNode draggingNode = null;
+        Vector2 draggingOffset;
 
         [MenuItem("Window/Dialogue Edior")]
         public static void ShowEditorWindow()
@@ -56,18 +59,40 @@ namespace RPG.Dialogue.Editor
                 EditorGUILayout.LabelField("No Dialogue Selected.");
             }
             else
-            {   
+            {
+                ProcessEvents();
                 foreach (DialogueNode node in selectedDialogue.GetAllNodes())
                 {
                     OnGUINode(node);
                 }
             }
-            
+        }
+
+        private void ProcessEvents()
+        {
+            if (Event.current.type == EventType.MouseDown && draggingNode == null)
+            {
+                draggingNode = GetNodeAtPoint(Event.current.mousePosition);
+                if (draggingNode != null)
+                {
+                    draggingOffset = draggingNode.rect.position - Event.current.mousePosition;
+                }
+            }
+            else if (Event.current.type == EventType.MouseDrag && draggingNode != null)
+            {
+                Undo.RecordObject(selectedDialogue, "Move Dialogue Node");
+                draggingNode.rect.position = Event.current.mousePosition + draggingOffset;
+                GUI.changed = true;
+            }
+            else if (Event.current.type == EventType.MouseUp && draggingNode != null)
+            {
+                draggingNode = null;
+            }
         }
 
         private void OnGUINode(DialogueNode node)
         {
-            GUILayout.BeginArea(node.position, nodeStyle);
+            GUILayout.BeginArea(node.rect, nodeStyle);
             EditorGUI.BeginChangeCheck();
 
             EditorGUILayout.LabelField("Node:", EditorStyles.boldLabel);
@@ -82,7 +107,25 @@ namespace RPG.Dialogue.Editor
                 node.uniqueID = newUniqueID;
             }
 
+            foreach (DialogueNode childNode in selectedDialogue.GetAllChildren(node))
+            {
+                EditorGUILayout.LabelField(childNode.text);
+            }
+
             GUILayout.EndArea();
+        }
+
+        private DialogueNode GetNodeAtPoint(Vector2 point)
+        {
+            DialogueNode foundNode = null;
+            foreach (DialogueNode node in selectedDialogue.GetAllNodes())
+            {
+                if (node.rect.Contains(point))
+                {
+                    foundNode = node;
+                }    
+            }
+            return foundNode;
         }
     }
 }
