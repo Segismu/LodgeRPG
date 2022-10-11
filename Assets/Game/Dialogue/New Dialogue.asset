@@ -12,4 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 248f04dd341e1481e8786b43e9489f05, type: 3}
   m_Name: New Dialogue
   m_EditorClassIdentifier: 
-  nodes: []
+  nodes:
+  - uniqueID: a
+    text: Hola Pirola
+    children: []
+    position:
+      serializedVersion: 2
+      x: 30
+      y: 30
+      width: 200
+      height: 100
