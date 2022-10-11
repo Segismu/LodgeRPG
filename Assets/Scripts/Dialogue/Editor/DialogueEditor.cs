@@ -8,13 +8,15 @@ namespace RPG.Dialogue.Editor
 {
     public class DialogueEditor : EditorWindow
     {
+        Dialogue selectedDialogue = null;
+
         [MenuItem("Window/Dialogue Edior")]
         public static void ShowEditorWindow()
         {
             GetWindow(typeof(DialogueEditor), false, "Dialogue Editor");
         }
 
-        [OnOpenAssetAttribute(1)]
+        [OnOpenAsset(1)]
         public static bool OnOpenAsset(int instanceID, int line)
         {
             Dialogue dialogue = EditorUtility.InstanceIDToObject(instanceID) as Dialogue;
@@ -26,11 +28,32 @@ namespace RPG.Dialogue.Editor
             return false;
         }
 
+        private void OnEnable()
+        {
+            Selection.selectionChanged += OnSelectionChanged;
+        }
+
+        private void OnSelectionChanged()
+        {
+            Dialogue newDialogue = Selection.activeObject as Dialogue;
+            if (newDialogue != null)
+            {
+                selectedDialogue = newDialogue;
+                Repaint();
+            }
+        }
+
         private void OnGUI()
         {
-            EditorGUILayout.LabelField("PATOTAS");
-            EditorGUILayout.LabelField("LOCOTAS");
-            EditorGUILayout.LabelField("SONCOTAS");
+            if (selectedDialogue == null)
+            {
+                EditorGUILayout.LabelField("No Dialogue Selected.");
+            }
+            else
+            {
+                EditorGUILayout.LabelField(selectedDialogue.name);
+            }
+            
         }
     }
 }
