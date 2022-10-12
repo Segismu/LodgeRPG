@@ -13,24 +13,4 @@ MonoBehaviour:
   m_Name: New Dialogue
   m_EditorClassIdentifier: 
   nodes:
-  - uniqueID: a
-    text: Hola Pirola
-    children:
-    - Loqueras
-    - Son
-    rect:
-      serializedVersion: 2
-      x: 327
-      y: 53.5
-      width: 200
-      height: 150
-  - uniqueID: b
-    text: MamoswinEEE
-    children:
-    - asdasdsadsa
-    rect:
-      serializedVersion: 2
-      x: 97
-      y: 152.5
-      width: 200
-      height: 150
+  - {fileID: 0}
