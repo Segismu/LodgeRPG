@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
@@ -8,6 +9,7 @@ namespace RPG.Dialogue
 {
     public class DialogueNode : ScriptableObject
     {
+        [SerializeField] bool isPlayer = false;
         [SerializeField] string text;
         [SerializeField] List<string> children = new List<string>();
         [SerializeField] Rect rect = new Rect(0, 0, 200, 100);
@@ -27,11 +29,17 @@ namespace RPG.Dialogue
             return children;
         }
 
+        public bool IsPlayerSpeaking()
+        {
+            return isPlayer;
+        }
+
 #if UNITY_EDITOR
         public void SetPosition(Vector2 newPosition)
         {
             Undo.RecordObject(this, "Move Dialogue Node");
             rect.position = newPosition;
+            EditorUtility.SetDirty(this);
         }
 
         public void SetText(string newText)
@@ -40,6 +48,7 @@ namespace RPG.Dialogue
             {
                 Undo.RecordObject(this, "Update Dialogue Text");
                 text = newText;
+                EditorUtility.SetDirty(this);
             }
         }
 
@@ -47,12 +56,21 @@ namespace RPG.Dialogue
         {
             Undo.RecordObject(this, "Add dialogue link.");
             children.Add(childID);
+            EditorUtility.SetDirty(this);
         }
 
         public void RemoveChild(string childID)
         {
             Undo.RecordObject(this, "Remove dialogue link.");
             children.Remove(childID);
+            EditorUtility.SetDirty(this);
+        }
+
+        public void SetPlayerSpeaking(bool newIsPlayerSpeaking)
+        {
+            Undo.RecordObject(this, "Change Speaker");
+            isPlayer = newIsPlayerSpeaking;
+            EditorUtility.SetDirty(this);
         }
 #endif
     }
