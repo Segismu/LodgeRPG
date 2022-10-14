@@ -25,6 +25,13 @@ namespace RPG.Dialogue
             return currentNode.GetText();
         }
 
+        public IEnumerable<string> GetChoices()
+        {
+            yield return "I've ME MYSELF";
+            yield return "I've ME PEPESELF";
+            yield return "I've ME COCOSELF";
+        }
+
         public void Next()
         {
             DialogueNode[] children = currentDialogue.GetAllChildren(currentNode).ToArray();
