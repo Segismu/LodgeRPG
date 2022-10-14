@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using RPG.Dialogue;
 using TMPro;
+using UnityEngine.UI;
 
 namespace RPG.UI
 {
@@ -10,16 +11,26 @@ namespace RPG.UI
     {
         PlayerConversant playerConversant;
         [SerializeField] TextMeshProUGUI AIText;
+        [SerializeField] Button nextButton;
 
         void Start()
         {
             playerConversant = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerConversant>();
-            AIText.text = playerConversant.GetText();
+            nextButton.onClick.AddListener(Next);
+
+            UpdateUI();
         }
 
-        void Update()
+        void Next()
         {
+            playerConversant.Next();
+            UpdateUI();
+        }
 
+        void UpdateUI()
+        {
+            AIText.text = playerConversant.GetText();
+            nextButton.gameObject.SetActive(playerConversant.HasNext());
         }
     }
 }
