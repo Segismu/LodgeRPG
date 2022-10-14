@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-3358715193707802277
+--- !u!114 &-3726247774674427574
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10,15 +10,37 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8b6035c5c1f824498ad1b3f5da4808ed, type: 3}
-  m_Name: d1fb6902-749c-4751-ae59-41260bab2460
+  m_Name: 55d3bad0-bc93-4d24-902a-cb9a70e30d4b
+  m_EditorClassIdentifier: 
+  isPlayer: 1
+  text: Fuck off, mongrel.
+  children:
+  - 4b833e76-d8fa-4936-9acb-65c4864b79e8
+  rect:
+    serializedVersion: 2
+    x: 296
+    y: 165
+    width: 200
+    height: 100
+--- !u!114 &-660339347605384365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b6035c5c1f824498ad1b3f5da4808ed, type: 3}
+  m_Name: cef9c07e-7600-4292-8b86-576e02f93298
   m_EditorClassIdentifier: 
   isPlayer: 0
-  text: 
+  text: The police is looking for something, or someome. Dont know.
   children: []
   rect:
     serializedVersion: 2
-    x: 664
-    y: 165
+    x: 529
+    y: 26
     width: 200
     height: 100
 --- !u!114 &11400000
@@ -36,10 +58,13 @@ MonoBehaviour:
   nodes:
   - {fileID: 8736521970058297383}
   - {fileID: 7134778537982724756}
-  - {fileID: -3358715193707802277}
-  - {fileID: 6736626179032601934}
+  - {fileID: -3726247774674427574}
+  - {fileID: 8624297444390610684}
+  - {fileID: 470748859457668938}
+  - {fileID: 1385563143583018057}
+  - {fileID: -660339347605384365}
   newNodeOffset: {x: 250, y: 0}
---- !u!114 &6736626179032601934
+--- !u!114 &470748859457668938
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -49,14 +74,35 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8b6035c5c1f824498ad1b3f5da4808ed, type: 3}
-  m_Name: 58ab3850-25d4-4286-92d9-5ad872c353b7
+  m_Name: 9a92ec62-d148-434d-a150-98b4b15d576f
   m_EditorClassIdentifier: 
   isPlayer: 0
-  text: 
+  text: Take your FASO, pillun.
   children: []
   rect:
     serializedVersion: 2
-    x: 664
+    x: 494
+    y: 281
+    width: 200
+    height: 100
+--- !u!114 &1385563143583018057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b6035c5c1f824498ad1b3f5da4808ed, type: 3}
+  m_Name: 4b833e76-d8fa-4936-9acb-65c4864b79e8
+  m_EditorClassIdentifier: 
+  isPlayer: 0
+  text: ...
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 546
     y: 165
     width: 200
     height: 100
@@ -73,14 +119,35 @@ MonoBehaviour:
   m_Name: e81e212d-be01-426b-a0dc-00eefb5fa1ff
   m_EditorClassIdentifier: 
   isPlayer: 1
-  text: sdfsdff
+  text: Just FASO.
   children:
-  - d1fb6902-749c-4751-ae59-41260bab2460
-  - 58ab3850-25d4-4286-92d9-5ad872c353b7
+  - 9a92ec62-d148-434d-a150-98b4b15d576f
   rect:
     serializedVersion: 2
-    x: 414
-    y: 165
+    x: 244
+    y: 281
+    width: 200
+    height: 100
+--- !u!114 &8624297444390610684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b6035c5c1f824498ad1b3f5da4808ed, type: 3}
+  m_Name: fa896c5c-a007-4ff1-90e4-570dda909bc3
+  m_EditorClassIdentifier: 
+  isPlayer: 1
+  text: Is the city closed?
+  children:
+  - cef9c07e-7600-4292-8b86-576e02f93298
+  rect:
+    serializedVersion: 2
+    x: 279
+    y: 26
     width: 200
     height: 100
 --- !u!114 &8736521970058297383
@@ -96,12 +163,14 @@ MonoBehaviour:
   m_Name: ecb647e2-4af1-4392-8abf-95411f2796af
   m_EditorClassIdentifier: 
   isPlayer: 0
-  text: dfsfdfs
+  text: New? Want something?
   children:
   - e81e212d-be01-426b-a0dc-00eefb5fa1ff
+  - 55d3bad0-bc93-4d24-902a-cb9a70e30d4b
+  - fa896c5c-a007-4ff1-90e4-570dda909bc3
   rect:
     serializedVersion: 2
-    x: -14
-    y: 93
+    x: 27
+    y: 127
     width: 200
     height: 100

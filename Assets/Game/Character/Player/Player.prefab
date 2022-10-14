@@ -3853,6 +3853,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scatterDistance: 1.5
   dropLibrary: {fileID: 0}
+--- !u!114 &8726652768869227833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5173620489110899010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b4173a4089fd4e76a765c62864b2824, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentDialogue: {fileID: 11400000, guid: fba4dc2e5751a4d20a68f129f3293575, type: 2}
 --- !u!4 &7031776507929385189 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8116640502791163123, guid: 001d2e7b849ed4f91a874a8614242558, type: 3}
