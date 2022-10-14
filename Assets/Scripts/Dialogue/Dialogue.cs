@@ -47,7 +47,29 @@ namespace RPG.Dialogue
             {
                 if (nodeLookup.ContainsKey(childID))
                 {
-                    yield return nodeLookup[childID];
+                    yield return nodeLookup [childID];
+                }
+            }
+        }
+
+        public IEnumerable<DialogueNode> GetPlayerChildren(DialogueNode currentNode)
+        {
+            foreach (DialogueNode node in GetAllChildren(currentNode))
+            {
+                if (node.IsPlayerSpeaking())
+                {
+                    yield return node;
+                }
+            }
+        }
+
+        public IEnumerable<DialogueNode> GetAIChildren(DialogueNode currentNode)
+        {
+            foreach (DialogueNode node in GetAllChildren(currentNode))
+            {
+                if (!node.IsPlayerSpeaking())
+                {
+                    yield return node;
                 }
             }
         }
@@ -56,7 +78,7 @@ namespace RPG.Dialogue
         public void CreateNode(DialogueNode parent)
         {
             DialogueNode newNode = MakeNode(parent);
-            Undo.RegisterCreatedObjectUndo(newNode, "Created Dialogue Node");
+            Undo.RegisterCreatedObjectUndo(newNode, "Created node");
             Undo.RecordObject(this, "Added node");
             AddNode(newNode);
         }
