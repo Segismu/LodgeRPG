@@ -22,7 +22,7 @@ namespace RPG.Attributes
 
         LazyValue<float> hpPoints;
 
-        bool isDead = false;
+        public bool isDead = false;
 
         private void Awake()
         {

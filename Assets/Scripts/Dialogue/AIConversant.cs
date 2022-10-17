@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using RPG.Attributes;
 using RPG.Controls;
 using UnityEngine;
 
@@ -11,6 +12,7 @@ namespace RPG.Dialogue
     public class AIConversant : MonoBehaviour, IRaycastable
     {
         [SerializeField] Dialogue dialogue = null;
+        [SerializeField] string conversantName;
 
     public CursorType GetCursorType()
         {
@@ -24,12 +26,23 @@ namespace RPG.Dialogue
                 return false;
             }
 
+            // Remove this in Somber
+            if (GetComponent<HP>().isDead)
+            {
+                return true;
+            }
+
             if (Input.GetMouseButtonDown(0))
             {
-                callingController.GetComponent<PlayerConversant>().StartDialogue(dialogue); ;
+                callingController.GetComponent<PlayerConversant>().StartDialogue(this, dialogue); ;
             }
 
             return true;
+        }
+
+        public string GetName()
+        {
+            return conversantName;
         }
     }
 }

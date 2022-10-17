@@ -22,6 +22,8 @@ MonoBehaviour:
     y: 110
     width: 200
     height: 100
+  onEnterAction: 
+  onExitAction: 
 --- !u!114 &-660339347605384365
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43,6 +45,8 @@ MonoBehaviour:
     y: 6
     width: 200
     height: 100
+  onEnterAction: 
+  onExitAction: TestAIExit
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -85,6 +89,8 @@ MonoBehaviour:
     y: 203
     width: 200
     height: 100
+  onEnterAction: 
+  onExitAction: 
 --- !u!114 &1385563143583018057
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -98,14 +104,16 @@ MonoBehaviour:
   m_Name: 4b833e76-d8fa-4936-9acb-65c4864b79e8
   m_EditorClassIdentifier: 
   isPlayer: 0
-  text: ...
+  text: Eat shit, fat titted slut.
   children: []
   rect:
     serializedVersion: 2
     x: 516
-    y: 104
+    y: 103
     width: 200
     height: 100
+  onEnterAction: 
+  onExitAction: Attack
 --- !u!114 &7134778537982724756
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -128,6 +136,8 @@ MonoBehaviour:
     y: 209
     width: 200
     height: 100
+  onEnterAction: 
+  onExitAction: 
 --- !u!114 &8624297444390610684
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -150,6 +160,8 @@ MonoBehaviour:
     y: 4
     width: 200
     height: 100
+  onEnterAction: TestSelection
+  onExitAction: 
 --- !u!114 &8736521970058297383
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -170,7 +182,9 @@ MonoBehaviour:
   - fa896c5c-a007-4ff1-90e4-570dda909bc3
   rect:
     serializedVersion: 2
-    x: 27
-    y: 127
+    x: 26
+    y: 128
     width: 200
     height: 100
+  onEnterAction: TestRootEntry
+  onExitAction: 
