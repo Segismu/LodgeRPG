@@ -10,10 +10,12 @@ public class QuestListUI : MonoBehaviour
 
     void Start()
     {
-        foreach (Transform kiddo in GetComponentInChildren<Transform>())
-        {
-            Destroy(kiddo.gameObject);
-        }
+        //foreach (Transform kiddo in GetComponentInChildren<Transform>())
+        //{
+        //    Destroy(kiddo.gameObject);
+        //}
+
+        transform.DetachChildren();
 
 
         foreach (Quest quest in tempQuests)

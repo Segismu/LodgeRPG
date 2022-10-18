@@ -478,8 +478,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2012917585700316199}
   m_HandleRect: {fileID: 224153372062608982}
   m_Direction: 2
-  m_Value: 0
-  m_Size: 0.94257903
+  m_Value: -0.0043223174
+  m_Size: 0.9411421
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1136,7 +1136,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000030517578, y: -570.75}
+  m_AnchoredPosition: {x: 0.000030517578, y: -570.42993}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &4131155162176750999
@@ -6196,19 +6196,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 406e60802ef144d488f0d413cce72667, type: 3}
---- !u!1 &700213834592417483 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7509422272449633677, guid: 406e60802ef144d488f0d413cce72667, type: 3}
-  m_PrefabInstance: {fileID: 7026032137437817670}
-  m_PrefabAsset: {fileID: 0}
---- !u!222 &2341038667224505262
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 700213834592417483}
-  m_CullTransparentMesh: 1
 --- !u!224 &2380675000272778220 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4650142864622016682, guid: 406e60802ef144d488f0d413cce72667, type: 3}

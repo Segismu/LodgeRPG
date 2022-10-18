@@ -946,7 +946,7 @@ MonoBehaviour:
   tempQuests:
   - {fileID: 11400000, guid: 5ae37a0369fe64dff9e5f4facd34c5ee, type: 2}
   - {fileID: 11400000, guid: 9370d003a798a488dbd4ab414ec4008a, type: 2}
-  questPrefab: {fileID: 4398792830158473721, guid: 372c46ce39fa0477a9dd7091e017e27e, type: 3}
+  questPrefab: {fileID: 3296713309438146281}
 --- !u!1 &9163912238196357624
 GameObject:
   m_ObjectHideFlags: 0
@@ -1617,6 +1617,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1561953215926469568, guid: 372c46ce39fa0477a9dd7091e017e27e, type: 3}
   m_PrefabInstance: {fileID: 1210308917188198160}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &3296713309438146281 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4398792830158473721, guid: 372c46ce39fa0477a9dd7091e017e27e, type: 3}
+  m_PrefabInstance: {fileID: 1210308917188198160}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b72bc11fd56f4198ab62c2ec45ab5bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2018566269643673267
 PrefabInstance:
   m_ObjectHideFlags: 0
