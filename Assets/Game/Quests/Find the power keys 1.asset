@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Find the power keys 1
   m_EditorClassIdentifier: 
   objetives:
-  - 
-  - 
-  - 
+  - 1
+  - 2
+  - 3
