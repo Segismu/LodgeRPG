@@ -3842,6 +3842,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a19ff972ec6859b48870488d7b1e81b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8305309059567039118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5173620489110899010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a662a98c66cb644a2b9fd1c462a29149, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  statuses:
+  - quest: {fileID: 11400000, guid: 5ae37a0369fe64dff9e5f4facd34c5ee, type: 2}
+    completedObjectives:
+    - b
+    - c
+  - quest: {fileID: 11400000, guid: 9370d003a798a488dbd4ab414ec4008a, type: 2}
+    completedObjectives:
+    - a
 --- !u!114 &8726652768869227833
 MonoBehaviour:
   m_ObjectHideFlags: 0
