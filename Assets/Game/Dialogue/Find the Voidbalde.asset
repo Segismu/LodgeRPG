@@ -17,12 +17,69 @@ MonoBehaviour:
   children: []
   rect:
     serializedVersion: 2
-    x: 596
-    y: 42
+    x: 546
+    y: 37
     width: 200
     height: 100
   onEnterAction: 
   onExitAction: GiveQuest
+  condition:
+    predicate: 
+    parameters: []
+--- !u!114 &-5098696972256143166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b6035c5c1f824498ad1b3f5da4808ed, type: 3}
+  m_Name: ad3d8869-249c-4d5f-8151-d19a6eae8e24
+  m_EditorClassIdentifier: 
+  isPlayer: 0
+  text: You are the DARKONE.
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 850
+    y: 188
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    predicate: 
+    parameters: []
+--- !u!114 &-4865064951100669291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b6035c5c1f824498ad1b3f5da4808ed, type: 3}
+  m_Name: d71e74b4-b263-41af-a67c-ec22691f0e89
+  m_EditorClassIdentifier: 
+  isPlayer: 1
+  text: Im looking fot it.
+  children:
+  - 037533ce-fa37-4432-80e2-ccaa54ee5138
+  rect:
+    serializedVersion: 2
+    x: 323
+    y: 236
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    predicate: HasQuest
+    parameters:
+    - Find the Voidblade
 --- !u!114 &-2348522843224828211
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47,6 +104,37 @@ MonoBehaviour:
     height: 100
   onEnterAction: 
   onExitAction: 
+  condition:
+    predicate: 
+    parameters: []
+--- !u!114 &-2051452726837788571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b6035c5c1f824498ad1b3f5da4808ed, type: 3}
+  m_Name: 9f5f40d1-6dd5-478d-9bd3-21fe4499c75d
+  m_EditorClassIdentifier: 
+  isPlayer: 1
+  text: I have the blade.
+  children:
+  - ad3d8869-249c-4d5f-8151-d19a6eae8e24
+  rect:
+    serializedVersion: 2
+    x: 763
+    y: 51
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    predicate: HasInventoryItem
+    parameters:
+    - dd36a6cf-6e68-44fd-87c3-7c94791ca199
 --- !u!114 &-2025576171506600607
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60,10 +148,12 @@ MonoBehaviour:
   m_Name: 4a41fce4-56fa-4bd4-a7e0-18d93be17a33
   m_EditorClassIdentifier: 
   isPlayer: 0
-  text: Hey, you.
+  text: Im not speaking until you show me the void itself.
   children:
   - 4e06388c-8010-4fe3-b02e-72294eb5fc97
   - 1cd331d0-dd98-4b9f-ae3c-2640bd5065ee
+  - d71e74b4-b263-41af-a67c-ec22691f0e89
+  - 9f5f40d1-6dd5-478d-9bd3-21fe4499c75d
   rect:
     serializedVersion: 2
     x: 95
@@ -72,6 +162,9 @@ MonoBehaviour:
     height: 100
   onEnterAction: 
   onExitAction: 
+  condition:
+    predicate: 
+    parameters: []
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -90,6 +183,10 @@ MonoBehaviour:
   - {fileID: 2526755623176807967}
   - {fileID: 5153638749873178952}
   - {fileID: -8676316989239396836}
+  - {fileID: -4865064951100669291}
+  - {fileID: 2633450554711276800}
+  - {fileID: -2051452726837788571}
+  - {fileID: -5098696972256143166}
   newNodeOffset: {x: 250, y: 0}
 --- !u!114 &2526755623176807967
 MonoBehaviour:
@@ -109,12 +206,41 @@ MonoBehaviour:
   - 214cd9da-fc64-4f94-8187-9c4f7f5146c3
   rect:
     serializedVersion: 2
-    x: 316
-    y: 176
+    x: 323
+    y: 143
     width: 200
     height: 100
   onEnterAction: 
   onExitAction: 
+  condition:
+    predicate: 
+    parameters: []
+--- !u!114 &2633450554711276800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b6035c5c1f824498ad1b3f5da4808ed, type: 3}
+  m_Name: 037533ce-fa37-4432-80e2-ccaa54ee5138
+  m_EditorClassIdentifier: 
+  isPlayer: 0
+  text: Good.
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 573
+    y: 236
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+  condition:
+    predicate: 
+    parameters: []
 --- !u!114 &5153638749873178952
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -132,9 +258,12 @@ MonoBehaviour:
   children: []
   rect:
     serializedVersion: 2
-    x: 566
-    y: 176
+    x: 579
+    y: 144
     width: 200
     height: 100
   onEnterAction: 
   onExitAction: GiveQuest
+  condition:
+    predicate: 
+    parameters: []
