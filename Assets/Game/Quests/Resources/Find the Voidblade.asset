@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00a3411960cd1414ab1dce905ab3d68e, type: 3}
   m_Name: Find the Voidblade
   m_EditorClassIdentifier: 
-  objetives:
-  - 2
-  - 3
+  objectives:
+  - reference: 2
+    description: Find the godlike blade.
+  rewards:
+  - number: 1
+    item: {fileID: 11400000, guid: 5429b3ceb21fb403fbf24dda66e53d56, type: 2}

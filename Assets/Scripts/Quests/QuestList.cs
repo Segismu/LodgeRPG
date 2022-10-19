@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using GameDevTV.Inventories;
 using GameDevTV.Saving;
 using UnityEngine;
 
@@ -28,6 +29,10 @@ namespace RPG.Quests
             QuestStatus status = GetQuestStatus(quest);
             status.CompleteObjective(objective);
 
+            if (status.IsComplete())
+            {
+                GiveReward(quest);
+            }
             if (onUpdate != null)
             {
                 onUpdate();
@@ -54,6 +59,18 @@ namespace RPG.Quests
                 }
             }
             return null;
+        }
+
+        private void GiveReward(Quest quest)
+        {
+            foreach (var reward in quest.GetRewards())
+            {
+                bool success =GetComponent<Inventory>().AddToFirstEmptySlot(reward.item, reward.number);
+                if (!success)
+                {
+                    GetComponent<ItemDropper>().DropItem(reward.item, reward.number);
+                }
+            }
         }
 
         public object CaptureState()
