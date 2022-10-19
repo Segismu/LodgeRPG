@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,7 +9,7 @@ namespace RPG.Quests
 
     public class Quest : ScriptableObject
     {
-        [SerializeField] string[] objetives;
+        [SerializeField] List<string> objetives = new List<string>();
 
         public string GetTitle()
         {
@@ -17,12 +18,17 @@ namespace RPG.Quests
 
         public int GetObjectiveCount()
         {
-            return objetives.Length;
+            return objetives.Count;
         }
 
         public IEnumerable<string> GetObjectives()
         {
             return objetives;
+        }
+
+        public bool HasObjective(string objective)
+        {
+            return objetives.Contains(objective);
         }
     }
 }

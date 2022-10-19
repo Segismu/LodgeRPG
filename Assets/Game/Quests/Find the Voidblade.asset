@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Find the Voidblade
   m_EditorClassIdentifier: 
   objetives:
-  - a
+  - 2
+  - 3

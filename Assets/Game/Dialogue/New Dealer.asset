@@ -85,12 +85,12 @@ MonoBehaviour:
   children: []
   rect:
     serializedVersion: 2
-    x: 495
+    x: 494
     y: 203
     width: 200
     height: 100
   onEnterAction: 
-  onExitAction: 
+  onExitAction: TestObjective
 --- !u!114 &1385563143583018057
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -104,12 +104,12 @@ MonoBehaviour:
   m_Name: 4b833e76-d8fa-4936-9acb-65c4864b79e8
   m_EditorClassIdentifier: 
   isPlayer: 0
-  text: Eat shit, fat titted slut.
+  text: Eat shit.
   children: []
   rect:
     serializedVersion: 2
-    x: 516
-    y: 103
+    x: 505
+    y: 99
     width: 200
     height: 100
   onEnterAction: 
