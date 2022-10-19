@@ -1,0 +1,140 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8676316989239396836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b6035c5c1f824498ad1b3f5da4808ed, type: 3}
+  m_Name: 5187af36-34c6-4cbf-abda-995bf2f9ba60
+  m_EditorClassIdentifier: 
+  isPlayer: 0
+  text: Bring me the steel of god.
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 596
+    y: 42
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: GiveQuest
+--- !u!114 &-2348522843224828211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b6035c5c1f824498ad1b3f5da4808ed, type: 3}
+  m_Name: 4e06388c-8010-4fe3-b02e-72294eb5fc97
+  m_EditorClassIdentifier: 
+  isPlayer: 1
+  text: Sup.
+  children:
+  - 5187af36-34c6-4cbf-abda-995bf2f9ba60
+  rect:
+    serializedVersion: 2
+    x: 345
+    y: 43
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+--- !u!114 &-2025576171506600607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b6035c5c1f824498ad1b3f5da4808ed, type: 3}
+  m_Name: 4a41fce4-56fa-4bd4-a7e0-18d93be17a33
+  m_EditorClassIdentifier: 
+  isPlayer: 0
+  text: Hey, you.
+  children:
+  - 4e06388c-8010-4fe3-b02e-72294eb5fc97
+  - 1cd331d0-dd98-4b9f-ae3c-2640bd5065ee
+  rect:
+    serializedVersion: 2
+    x: 95
+    y: 42
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 248f04dd341e1481e8786b43e9489f05, type: 3}
+  m_Name: Find the Voidbalde
+  m_EditorClassIdentifier: 
+  nodes:
+  - {fileID: -2025576171506600607}
+  - {fileID: -2348522843224828211}
+  - {fileID: 2526755623176807967}
+  - {fileID: 5153638749873178952}
+  - {fileID: -8676316989239396836}
+  newNodeOffset: {x: 250, y: 0}
+--- !u!114 &2526755623176807967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b6035c5c1f824498ad1b3f5da4808ed, type: 3}
+  m_Name: 1cd331d0-dd98-4b9f-ae3c-2640bd5065ee
+  m_EditorClassIdentifier: 
+  isPlayer: 1
+  text: Have FASO.
+  children:
+  - 214cd9da-fc64-4f94-8187-9c4f7f5146c3
+  rect:
+    serializedVersion: 2
+    x: 316
+    y: 176
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: 
+--- !u!114 &5153638749873178952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b6035c5c1f824498ad1b3f5da4808ed, type: 3}
+  m_Name: 214cd9da-fc64-4f94-8187-9c4f7f5146c3
+  m_EditorClassIdentifier: 
+  isPlayer: 0
+  text: No, no. Can you give me the VOIDBLADE itself
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 566
+    y: 176
+    width: 200
+    height: 100
+  onEnterAction: 
+  onExitAction: GiveQuest
