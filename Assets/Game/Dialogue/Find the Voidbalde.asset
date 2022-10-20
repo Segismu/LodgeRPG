@@ -17,15 +17,14 @@ MonoBehaviour:
   children: []
   rect:
     serializedVersion: 2
-    x: 546
-    y: 37
+    x: 586
+    y: -3
     width: 200
     height: 100
   onEnterAction: 
   onExitAction: GiveQuest
   condition:
-    predicate: 
-    parameters: []
+    and: []
 --- !u!114 &-5098696972256143166
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43,15 +42,14 @@ MonoBehaviour:
   children: []
   rect:
     serializedVersion: 2
-    x: 850
-    y: 188
+    x: 834
+    y: 272
     width: 200
     height: 100
   onEnterAction: 
   onExitAction: 
   condition:
-    predicate: 
-    parameters: []
+    and: []
 --- !u!114 &-4865064951100669291
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -77,9 +75,17 @@ MonoBehaviour:
   onEnterAction: 
   onExitAction: 
   condition:
-    predicate: HasQuest
-    parameters:
-    - Find the Voidblade
+    and:
+    - or:
+      - predicate: HasQuest
+        parameters:
+        - Find the Voidblade
+        negate: 0
+    - or:
+      - predicate: CompletedQuest
+        parameters:
+        - Find the Voidblade
+        negate: 1
 --- !u!114 &-2348522843224828211
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -105,8 +111,7 @@ MonoBehaviour:
   onEnterAction: 
   onExitAction: 
   condition:
-    predicate: 
-    parameters: []
+    and: []
 --- !u!114 &-2051452726837788571
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -125,16 +130,28 @@ MonoBehaviour:
   - ad3d8869-249c-4d5f-8151-d19a6eae8e24
   rect:
     serializedVersion: 2
-    x: 763
-    y: 51
+    x: 81
+    y: 283
     width: 200
     height: 100
   onEnterAction: 
   onExitAction: 
   condition:
-    predicate: HasInventoryItem
-    parameters:
-    - dd36a6cf-6e68-44fd-87c3-7c94791ca199
+    and:
+    - or:
+      - predicate: HasQuest
+        parameters:
+        - Find the Voidblade
+        negate: 0
+    - or:
+      - predicate: CompletedQuest
+        parameters:
+        - Find the Voidblade
+        negate: 1
+      - predicate: HasInventoryItem
+        parameters:
+        - dd36a6cf-6e68-44fd-87c3-7c94791ca199
+        negate: 1
 --- !u!114 &-2025576171506600607
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -163,8 +180,7 @@ MonoBehaviour:
   onEnterAction: 
   onExitAction: 
   condition:
-    predicate: 
-    parameters: []
+    and: []
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -213,8 +229,7 @@ MonoBehaviour:
   onEnterAction: 
   onExitAction: 
   condition:
-    predicate: 
-    parameters: []
+    and: []
 --- !u!114 &2633450554711276800
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -239,8 +254,7 @@ MonoBehaviour:
   onEnterAction: 
   onExitAction: 
   condition:
-    predicate: 
-    parameters: []
+    and: []
 --- !u!114 &5153638749873178952
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -265,5 +279,4 @@ MonoBehaviour:
   onEnterAction: 
   onExitAction: GiveQuest
   condition:
-    predicate: 
-    parameters: []
+    and: []
