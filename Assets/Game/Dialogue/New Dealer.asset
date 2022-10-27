@@ -24,6 +24,8 @@ MonoBehaviour:
     height: 100
   onEnterAction: 
   onExitAction: 
+  condition:
+    and: []
 --- !u!114 &-660339347605384365
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47,6 +49,8 @@ MonoBehaviour:
     height: 100
   onEnterAction: 
   onExitAction: TestAIExit
+  condition:
+    and: []
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -91,6 +95,8 @@ MonoBehaviour:
     height: 100
   onEnterAction: 
   onExitAction: TestObjective
+  condition:
+    and: []
 --- !u!114 &1385563143583018057
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114,6 +120,8 @@ MonoBehaviour:
     height: 100
   onEnterAction: 
   onExitAction: Attack
+  condition:
+    and: []
 --- !u!114 &7134778537982724756
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -136,8 +144,15 @@ MonoBehaviour:
     y: 209
     width: 200
     height: 100
-  onEnterAction: 
+  onEnterAction: HasQuest
   onExitAction: 
+  condition:
+    and:
+    - or:
+      - predicate: HasQuest
+        parameters:
+        - Find the Voidblade
+        negate: 0
 --- !u!114 &8624297444390610684
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -162,6 +177,8 @@ MonoBehaviour:
     height: 100
   onEnterAction: TestSelection
   onExitAction: 
+  condition:
+    and: []
 --- !u!114 &8736521970058297383
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -182,9 +199,11 @@ MonoBehaviour:
   - fa896c5c-a007-4ff1-90e4-570dda909bc3
   rect:
     serializedVersion: 2
-    x: 26
-    y: 128
+    x: 25
+    y: 127
     width: 200
     height: 100
   onEnterAction: TestRootEntry
   onExitAction: 
+  condition:
+    and: []
