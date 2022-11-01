@@ -301,6 +301,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5283718301798286443, guid: 451b9faab27d346f29b857bc108d9ae2, type: 3}
   m_PrefabInstance: {fileID: 6626979220356201167}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2678193897750984356 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9141490668544789611, guid: 451b9faab27d346f29b857bc108d9ae2, type: 3}
+  m_PrefabInstance: {fileID: 6626979220356201167}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3499944123119586238 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7738748626011926897, guid: 451b9faab27d346f29b857bc108d9ae2, type: 3}
@@ -336,5 +347,31 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c0ae4dce8109e468189ba11832acb268, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  iconField: {fileID: 439247696938263282}
+  nameField: {fileID: 4080856480426325814}
+  availabilityField: {fileID: 4790924896347879498}
+  priceField: {fileID: 2678193897750984356}
+--- !u!114 &4080856480426325814 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7157872535534603769, guid: 451b9faab27d346f29b857bc108d9ae2, type: 3}
+  m_PrefabInstance: {fileID: 6626979220356201167}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4790924896347879498 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1840576632521884293, guid: 451b9faab27d346f29b857bc108d9ae2, type: 3}
+  m_PrefabInstance: {fileID: 6626979220356201167}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
