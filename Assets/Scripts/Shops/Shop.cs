@@ -9,6 +9,8 @@ namespace RPG.Shops
 {
     public class Shop : MonoBehaviour, IRaycastable
     {
+        [SerializeField] string shopName;
+
         public class ShopItem
         {
             InventoryItem item;
@@ -41,6 +43,11 @@ namespace RPG.Shops
                 callingController.GetComponent<Shopper>().SetActiveShop(this);
             }
             return true;
+        }
+
+        public string GetShopName()
+        {
+            return shopName;
         }
     }
 }
