@@ -11,15 +11,25 @@ namespace RPG.Shops
     {
         [SerializeField] string shopName;
 
+        [SerializeField] StockItemConfig[] stockConfig;
+
+        [System.Serializable]
+        class StockItemConfig
+        {
+            public InventoryItem item;
+            public int initialStock;
+            [Range(0, 100)] public float buyingDiscountPercentage;
+        }
+
         public event Action onChange;
 
         public IEnumerable<ShopItem> GetFilteredItems()
         {
-            yield return new ShopItem(InventoryItem.GetFromID("86cdcb8c-72f4-460b-88e4-450a28caf014"), 5, 10f, 0);
-            yield return new ShopItem(InventoryItem.GetFromID("61726d9e-d1d6-4c83-b2d9-2885452a6221"), 1, 100f, 0);
-            yield return new ShopItem(InventoryItem.GetFromID("88233aff-9d10-45c0-b905-98d0397b3bf9"), 10, 50f, 0);
-            yield return new ShopItem(InventoryItem.GetFromID("88233aff-9d10-45c0-b905-98d0397b3bf9"), 10, 50f, 0);
-
+            foreach (StockItemConfig config in stockConfig)
+            {
+                float price = config.item.GetPrice() *  (1 - config.buyingDiscountPercentage/100);
+                yield return new ShopItem(config.item, config.initialStock, price, 0);
+            }
         }
         public void SelectFilter(ItemCategory category) { }
         public ItemCategory GetFilter() { return ItemCategory.None; }
