@@ -8,12 +8,14 @@ using RPG.Attributes;
 using System;
 using UnityEngine.EventSystems;
 using UnityEngine.AI;
+using GameDevTV.Inventories;
 
 namespace RPG.Controls
 {
     public class PlayerController : MonoBehaviour
     {
         HP hppoints;
+        ActionStore actionStore;
 
 
         [System.Serializable]
@@ -27,12 +29,14 @@ namespace RPG.Controls
         [SerializeField] CursorMapping[] cursorMappings = null;
         [SerializeField] float maxNavMeshProjectionDistance = 1f;
         [SerializeField] float raycastRadius = 1f;
+        [SerializeField] int numOfArts = 6;
 
         bool isDraggingUI = false;
 
         private void Awake()
         {
             hppoints = GetComponent<HP>();
+            actionStore = GetComponent<ActionStore>();
         }
 
         private void Update()
@@ -43,6 +47,8 @@ namespace RPG.Controls
                 SetCursor(CursorType.None);
                 return;
             }
+
+            UseArts();
 
             if (InteractWithComponent()) return;
             if (MoverInteractor()) return;
@@ -76,6 +82,17 @@ namespace RPG.Controls
             }
 
             return false;
+        }
+
+        private void UseArts()
+        {
+            for (int i = 0; i < numOfArts; i++)
+            {
+                if (Input.GetKeyDown(KeyCode.Alpha1 + i))
+                {
+                    actionStore.Use(i, gameObject);
+                }
+            }
         }
 
         private bool InteractWithComponent()
