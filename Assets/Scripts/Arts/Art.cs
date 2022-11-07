@@ -7,6 +7,12 @@ namespace RPG.Arts
 
     public class Art : ActionItem
     {
+        [SerializeField] TargetingStrategy targetingStrategy;
+
+        public override void Use(GameObject user)
+        {
+            targetingStrategy.StartTargeting();
+        }
 
     }
 }
