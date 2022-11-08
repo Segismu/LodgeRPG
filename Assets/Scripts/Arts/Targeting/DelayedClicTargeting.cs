@@ -1,4 +1,6 @@
+using System;
 using System.Collections;
+using System.Collections.Generic;
 using RPG.Controls;
 using UnityEngine;
 
@@ -9,14 +11,16 @@ namespace RPG.Arts.Targeting
     {
         [SerializeField] Texture2D cursorTexture;
         [SerializeField] Vector2 cursorHotspot;
+        [SerializeField] LayerMask layerMask;
+        [SerializeField] float areaAffectRadius;
 
-        public override void StartTargeting(GameObject user)
+        public override void StartTargeting(GameObject user, Action<IEnumerable<GameObject>> finished)
         {
             PlayerController playerController = user.GetComponent<PlayerController>();
-            playerController.StartCoroutine(Targeting(user, playerController));
+            playerController.StartCoroutine(Targeting(user, playerController, finished));
         }
 
-        private IEnumerator Targeting(GameObject user, PlayerController playerController)
+        private IEnumerator Targeting(GameObject user, PlayerController playerController, Action<IEnumerable<GameObject>> finished)
         {
             playerController.enabled = false;
 
@@ -27,15 +31,26 @@ namespace RPG.Arts.Targeting
                 if (Input.GetMouseButtonDown(0))
                 {
 
-                    while (Input.GetMouseButton(0))
-                    {
-                        yield return null;
-                    }
-
+                    yield return new WaitWhile(() => Input.GetMouseButton(0));
                     playerController.enabled = true;
+                    finished(GetGameObjectsInRadius());
                     yield break;
                 }
                 yield return null;
+            }
+        }
+
+        private IEnumerable<GameObject> GetGameObjectsInRadius()
+        {
+            RaycastHit raycastHit;
+            if (Physics.Raycast(PlayerController.GetCursorRay(), out raycastHit, 1000, layerMask))
+            {
+                RaycastHit[] hits = Physics.SphereCastAll(raycastHit.point, areaAffectRadius, Vector3.up, 0);
+
+                foreach (var hit in hits)
+                {
+                    yield return hit.collider.gameObject;
+                }
             }
         }
     }
