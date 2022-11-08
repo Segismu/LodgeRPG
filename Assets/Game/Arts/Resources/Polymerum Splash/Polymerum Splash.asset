@@ -16,6 +16,6 @@ MonoBehaviour:
   cursorHotspot: {x: 0, y: 0}
   layerMask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 128
   areaAffectRadius: 5
   targetingPrefab: {fileID: 6996924519588317446, guid: a423657e1c007455f85f2d0b1db4e359, type: 3}
