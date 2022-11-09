@@ -9,6 +9,7 @@ namespace RPG.Arts
     public class Art : ActionItem
     {
         [SerializeField] TargetingStrategy targetingStrategy;
+        [SerializeField] FilteringStrategy[] filteringStrategies;
 
         public override void Use(GameObject user)
         {
@@ -18,6 +19,12 @@ namespace RPG.Arts
         private void TargetAquired(IEnumerable<GameObject> targets)
         {
             Debug.Log("Target Aquired");
+
+            foreach (var filteringStrategy in filteringStrategies)
+            {
+                targets = filteringStrategy.Filter(targets);
+            }    
+
             foreach (var target in targets)
             {
                 Debug.Log(target);
