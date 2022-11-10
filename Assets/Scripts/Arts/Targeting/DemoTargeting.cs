@@ -7,10 +7,10 @@ namespace RPG.Arts.Targeting
     [CreateAssetMenu(fileName = "Demo Targeting", menuName = "Arts/Targeting/Demo", order = 0)]
     public class DemoTargeting : TargetingStrategy
     {
-        public override void StartTargeting(GameObject user, Action<IEnumerable<GameObject>> finished)
+        public override void StartTargeting(AbilityData data, Action finished)
         {
             Debug.Log("Demo targeting Starts");
-            finished(null);
+            finished();
         }
     }
 }
