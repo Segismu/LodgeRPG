@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using GameDevTV.Inventories;
 using UnityEngine;
+using static UnityEngine.UIElements.UxmlAttributeDescription;
 
 namespace RPG.Arts
 {
@@ -10,10 +11,18 @@ namespace RPG.Arts
     {
         [SerializeField] TargetingStrategy targetingStrategy;
         [SerializeField] FilteringStrategy[] filteringStrategies;
-        [SerializeField] EffectStrategy[] effectStrategies; 
+        [SerializeField] EffectStrategy[] effectStrategies;
+        [SerializeField] float cooldownTime = 0;
 
         public override void Use(GameObject user)
         {
+            CooldownStore cooldownStore = user.GetComponent<CooldownStore>();
+
+            if(cooldownStore.GetTimeRemaining(this) > 0)
+            {
+                return;
+            }
+
             AbilityData data = new AbilityData(user);
             targetingStrategy.StartTargeting(data,
                 () => {
@@ -23,6 +32,8 @@ namespace RPG.Arts
 
         private void TargetAquired(AbilityData data)
         {
+            CooldownStore cooldownStore = data.GetUser().GetComponent<CooldownStore>();
+            cooldownStore.StartCooldown(this, cooldownTime);
 
             foreach (var filteringStrategy in filteringStrategies)
             {
