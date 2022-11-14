@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using GameDevTV.Inventories;
 using UnityEngine;
 
 namespace RPG.Arts
@@ -7,29 +9,32 @@ namespace RPG.Arts
     public class CooldownStore : MonoBehaviour
     {
 
-        Dictionary<Art, float> cooldownTimers = new Dictionary<Art, float>();
+        Dictionary<InventoryItem, float> cooldownTimers = new Dictionary<InventoryItem, float>();
+        Dictionary<InventoryItem, float> initialCooldownTimes = new Dictionary<InventoryItem, float>();
 
         void Update()
         {
-            var keys = new List<Art>(cooldownTimers.Keys);
+            var keys = new List<InventoryItem>(cooldownTimers.Keys);
 
-            foreach (Art art in keys)
+            foreach (InventoryItem art in keys)
             {
                 cooldownTimers[art] -= Time.deltaTime;
 
                 if (cooldownTimers[art] < 0)
                 {
                     cooldownTimers.Remove(art);
+                    initialCooldownTimes.Remove(art);
                 }
             }
         }
 
-        public void StartCooldown(Art art, float cooldownTime)
+        public void StartCooldown(InventoryItem art, float cooldownTime)
         {
             cooldownTimers[art] = cooldownTime;
+            initialCooldownTimes[art] = cooldownTime;
         }
 
-        public float GetTimeRemaining(Art art)
+        public float GetTimeRemaining(InventoryItem art)
         {
             if(!cooldownTimers.ContainsKey(art))
             {
@@ -37,6 +42,21 @@ namespace RPG.Arts
             }
 
             return cooldownTimers[art];
+        }
+
+        public float GetFractionRemaining(InventoryItem art)
+        {
+            if (art == null)
+            {
+                return 0;
+            }
+
+            if (!cooldownTimers.ContainsKey(art))
+            {
+                return 0;
+            }
+
+            return cooldownTimers[art] / initialCooldownTimes[art];
         }
     }
 }
