@@ -1,3 +1,5 @@
+using GameDevTV.Utils;
+using RPG.Stats;
 using UnityEngine;
 
 namespace RPG.Attributes
@@ -7,47 +9,49 @@ namespace RPG.Attributes
 
     public class AE : MonoBehaviour
     {
-        [SerializeField] float maxAE = 200;
-        [SerializeField] float aeRegenRate = 5;
-
-        float ae;
+        LazyValue<float> ae;
 
         private void Awake()
         {
-            ae = maxAE;
+            ae = new LazyValue<float>(GetMaxAE);
         }
 
         private void Update()
         {
-            if (ae < maxAE)
+            if (ae.value < GetMaxAE())
             {
-                ae += aeRegenRate * Time.deltaTime;
+                ae.value += GetAERegenRate() * Time.deltaTime;
 
-                if (ae > maxAE)
+                if (ae.value > GetMaxAE())
                 {
-                    ae = maxAE;
+                    ae.value = GetMaxAE();
                 }
             }
         }
 
         public float GetAE()
         {
-            return ae;
+            return ae.value;
+        }
+
+        public float GetAERegenRate()
+        {
+            return GetComponent<BaseStats>().GetStat(Stat.aeRegen);
         }
 
         public float GetMaxAE()
         {
-            return maxAE;
+            return GetComponent<BaseStats>().GetStat(Stat.AE);
         }
 
         public bool UseAE(float aeToUse)
         {
-            if (aeToUse > ae)
+            if (aeToUse > ae.value)
             {
                 return false;
             }
 
-            ae -= aeToUse;
+            ae.value -= aeToUse;
             return true;
         }
     }

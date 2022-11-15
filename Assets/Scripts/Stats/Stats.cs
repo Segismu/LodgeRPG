@@ -5,6 +5,8 @@ namespace RPG.Stats
         HP,
         ExpReward,
         ExperienceToLevelUp,
-        Damage
+        Damage,
+        AE,
+        aeRegen
     }
 }
