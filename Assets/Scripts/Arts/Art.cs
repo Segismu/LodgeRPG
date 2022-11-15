@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using GameDevTV.Inventories;
+using RPG.Attributes;
 using UnityEngine;
 using static UnityEngine.UIElements.UxmlAttributeDescription;
 
@@ -13,9 +14,17 @@ namespace RPG.Arts
         [SerializeField] FilteringStrategy[] filteringStrategies;
         [SerializeField] EffectStrategy[] effectStrategies;
         [SerializeField] float cooldownTime = 0;
+        [SerializeField] float aeCost = 0;
 
         public override void Use(GameObject user)
         {
+            AE ae = user.GetComponent<AE>();
+
+            if (ae.GetAE() < aeCost)
+            {
+                return;
+            }
+
             CooldownStore cooldownStore = user.GetComponent<CooldownStore>();
 
             if(cooldownStore.GetTimeRemaining(this) > 0)
@@ -32,6 +41,9 @@ namespace RPG.Arts
 
         private void TargetAquired(AbilityData data)
         {
+            AE ae = data.GetUser().GetComponent<AE>();
+            if (!ae.UseAE(aeCost)) return;
+
             CooldownStore cooldownStore = data.GetUser().GetComponent<CooldownStore>();
             cooldownStore.StartCooldown(this, cooldownTime);
 
