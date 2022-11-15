@@ -8,12 +8,26 @@ namespace RPG.Attributes
     public class AE : MonoBehaviour
     {
         [SerializeField] float maxAE = 200;
+        [SerializeField] float aeRegenRate = 5;
 
         float ae;
 
         private void Awake()
         {
             ae = maxAE;
+        }
+
+        private void Update()
+        {
+            if (ae < maxAE)
+            {
+                ae += aeRegenRate * Time.deltaTime;
+
+                if (ae > maxAE)
+                {
+                    ae = maxAE;
+                }
+            }
         }
 
         public float GetAE()
