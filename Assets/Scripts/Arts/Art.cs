@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using GameDevTV.Inventories;
 using RPG.Attributes;
+using RPG.Core;
 using UnityEngine;
 using static UnityEngine.UIElements.UxmlAttributeDescription;
 
@@ -33,6 +34,10 @@ namespace RPG.Arts
             }
 
             AbilityData data = new AbilityData(user);
+
+            Scheduler scheduler = user.GetComponent<Scheduler>();
+            scheduler.StartAction(data);
+
             targetingStrategy.StartTargeting(data,
                 () => {
                     TargetAquired(data  );
@@ -41,6 +46,8 @@ namespace RPG.Arts
 
         private void TargetAquired(AbilityData data)
         {
+            if (data.IsCancelled()) return;
+
             AE ae = data.GetUser().GetComponent<AE>();
             if (!ae.UseAE(aeCost)) return;
 
