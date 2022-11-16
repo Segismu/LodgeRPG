@@ -1,3 +1,4 @@
+using GameDevTV.Saving;
 using GameDevTV.Utils;
 using RPG.Stats;
 using UnityEngine;
@@ -7,7 +8,7 @@ namespace RPG.Attributes
 {
     //Energy consumed to perform arts actions.
 
-    public class AE : MonoBehaviour
+    public class AE : MonoBehaviour, ISaveable
     {
         LazyValue<float> ae;
 
@@ -53,6 +54,16 @@ namespace RPG.Attributes
 
             ae.value -= aeToUse;
             return true;
+        }
+
+        public object CaptureState()
+        {
+            return ae.value;
+        }
+
+        public void RestoreState(object state)
+        {
+            ae.value = (float) state;
         }
     }
 }
