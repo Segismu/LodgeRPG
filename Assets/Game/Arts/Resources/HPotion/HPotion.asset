@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51b0a97a5887047658ecd00b9e18d8a4, type: 3}
+  m_Name: HPotion
+  m_EditorClassIdentifier: 
+  itemID: 98854fe5-8191-435d-af46-b048be848b20
+  displayName: H Potion
+  description: Mild drug that revitalizes the user.
+  icon: {fileID: 21300000, guid: aba0f700d91d4fc4fa8c724899ab04ab, type: 3}
+  pickup: {fileID: 195601745611086864, guid: 26cb7f7ee57784e2eb7fc5a58ff95f0d, type: 3}
+  stackable: 1
+  price: 10
+  category: 3
+  consumable: 1
+  targetingStrategy: {fileID: 11400000, guid: b7d5dd1db9eea42c1b114ea232d320d6, type: 2}
+  filteringStrategies: []
+  effectStrategies:
+  - {fileID: 11400000, guid: 07f8ccc4c02c7480e8ae1c7b33d2cca7, type: 2}
+  - {fileID: 11400000, guid: a5821323ecddc41ccac6257fe2a81e47, type: 2}
+  cooldownTime: 0
+  aeCost: 0
