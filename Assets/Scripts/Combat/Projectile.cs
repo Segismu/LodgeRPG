@@ -49,6 +49,11 @@ namespace RPG.Combat
             Destroy(gameObject, maxLifeTime);
         }
 
+        public void SetTarget()
+        {
+
+        }
+
         private Vector3 GetAimLoc()
         {
             CapsuleCollider targetCapsule = target.GetComponent<CapsuleCollider>();
