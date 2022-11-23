@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51b0a97a5887047658ecd00b9e18d8a4, type: 3}
+  m_Name: Fire ST
+  m_EditorClassIdentifier: 
+  itemID: 4ffae9cd-6482-4fb0-93a6-5abc5eae5fe1
+  displayName: 
+  description: 
+  icon: {fileID: 21300000, guid: 5732dc58816b91d4dbc488b1b3c8f08b, type: 3}
+  pickup: {fileID: 195601745611086864, guid: 26cb7f7ee57784e2eb7fc5a58ff95f0d, type: 3}
+  stackable: 0
+  price: 0
+  category: 0
+  consumable: 0
+  targetingStrategy: {fileID: 11400000, guid: 39ef2d582f4b147be8d67437395a9a5f, type: 2}
+  filteringStrategies:
+  - {fileID: 11400000, guid: 6e73db9e06e9e469990e52d6413a2792, type: 2}
+  effectStrategies:
+  - {fileID: 11400000, guid: b3c1fc1f79687497f9cc6755aa2c9bd0, type: 2}
+  cooldownTime: 4
+  aeCost: 30
