@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69772bec68cc2424380233e14faf3028, type: 3}
-  m_Name: Fireball
+  m_Script: {fileID: 11500000, guid: 75d9a9518ab634f5280de96d376c5f3a, type: 3}
+  m_Name: Directional Targeting
   m_EditorClassIdentifier: 
-  projectileToSpawn: {fileID: 8045446629836202792, guid: 974a39f5c88544e9b9b504262bdc788d, type: 3}
-  damage: 50
-  isRightHand: 1
-  useTargetPoint: 1
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 128
+  groundOffset: 1

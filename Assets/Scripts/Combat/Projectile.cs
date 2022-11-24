@@ -21,6 +21,7 @@ namespace RPG.Combat
 
 
         HP target = null;
+        Vector3 targetPoint;
         GameObject instigator = null;
         float damage = 0;
 
@@ -31,9 +32,7 @@ namespace RPG.Combat
 
         void Update()
         {
-            if (target == null) return;
-
-            if (isHoming && !target.IsDead())
+            if (target != null && isHoming && !target.IsDead())
             {
                 transform.LookAt(GetAimLoc());
             }
@@ -42,20 +41,31 @@ namespace RPG.Combat
 
         public void SetTarget(HP target, GameObject instigator, float damage)
         {
+            SetTarget(instigator, damage, target);
+        }
+
+        public void SetTarget(Vector3 targetPoint, GameObject instigator, float damage)
+        {
+            SetTarget(instigator, damage, null, targetPoint);
+        }
+
+        public void SetTarget(GameObject instigator, float damage, HP target = null, Vector3 targetPoint = default)
+        {
             this.target = target;
+            this.targetPoint = targetPoint;
             this.damage = damage;
             this.instigator = instigator;
 
             Destroy(gameObject, maxLifeTime);
         }
 
-        public void SetTarget()
-        {
-
-        }
-
         private Vector3 GetAimLoc()
         {
+            if (target == null)
+            {
+                return targetPoint;
+            }
+
             CapsuleCollider targetCapsule = target.GetComponent<CapsuleCollider>();
 
             if (targetCapsule == null)
@@ -68,9 +78,11 @@ namespace RPG.Combat
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other.GetComponent<HP>() != target) return;
-            if (target.IsDead()) return;
-            target.TakeDamage(instigator, damage);
+            HP hP = other.GetComponent<HP>();
+            if (target != null && hP != target) return;
+            if (hP == null || hP.IsDead()) return;
+            if (other.gameObject == instigator) return;
+            hP.TakeDamage(instigator, damage);
 
             speed = 0;
 

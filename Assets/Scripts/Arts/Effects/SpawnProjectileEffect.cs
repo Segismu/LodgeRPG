@@ -11,12 +11,34 @@ namespace RPG.Arts.Effects
         [SerializeField] Projectile projectileToSpawn;
         [SerializeField] float damage;
         [SerializeField] bool isRightHand = true;
+        [SerializeField] bool useTargetPoint = true;
 
         public override void StartEffect(AbilityData data, Action finished)
         {
             Fight fighter = data.GetUser().GetComponent<Fight>();
             Vector3 spawnPos = fighter.GetHandTransform(isRightHand).position;
 
+            if (useTargetPoint)
+            {
+                SpawnProjectileForTargetPoint(data, spawnPos);
+            }
+            else
+            {
+                SpawnProjectileForTargets(data, spawnPos);
+            }
+
+            finished();
+        }
+
+        private void SpawnProjectileForTargetPoint(AbilityData data, Vector3 spawnPos)
+        {
+            Projectile projectile = Instantiate(projectileToSpawn);
+            projectile.transform.position = spawnPos;
+            projectile.SetTarget(data.GetTargetedPoint(), data.GetUser(), damage);
+        }
+
+        private void SpawnProjectileForTargets(AbilityData data, Vector3 spawnPos)
+        {
             foreach (var target in data.GetTargets())
             {
                 HP hp = target.GetComponent<HP>();
@@ -27,7 +49,6 @@ namespace RPG.Arts.Effects
                     projectile.transform.position = spawnPos;
                     projectile.SetTarget(hp, data.GetUser(), damage);
                 }
-                finished();
             }
         }
     }
