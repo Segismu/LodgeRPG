@@ -24,6 +24,8 @@ MonoBehaviour:
   targetingStrategy: {fileID: 11400000, guid: f25af826cbfef4e14b256ad1ba8523e1, type: 2}
   filteringStrategies: []
   effectStrategies:
-  - {fileID: 11400000, guid: b3c1fc1f79687497f9cc6755aa2c9bd0, type: 2}
-  cooldownTime: 2
-  aeCost: 30
+  - {fileID: 11400000, guid: fa5ed2cfad1a24346b39ec3ed2e9d1b0, type: 2}
+  - {fileID: 11400000, guid: d20b394a2c2a745ff9a1861683d52d68, type: 2}
+  - {fileID: 11400000, guid: 21e3b41b08ecf48489445e8540bfaee7, type: 2}
+  cooldownTime: 0.5
+  aeCost: 20
