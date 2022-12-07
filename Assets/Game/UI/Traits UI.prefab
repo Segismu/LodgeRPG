@@ -345,6 +345,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TraitRow (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5518479257615451653, guid: 18a4121d0297f41c19c2e5a0e0dadec6, type: 3}
+      propertyPath: trait
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18a4121d0297f41c19c2e5a0e0dadec6, type: 3}
 --- !u!1001 &2408135965872767192
@@ -553,6 +557,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TraitRow (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 5518479257615451653, guid: 18a4121d0297f41c19c2e5a0e0dadec6, type: 3}
+      propertyPath: trait
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18a4121d0297f41c19c2e5a0e0dadec6, type: 3}
 --- !u!1001 &3576762799868132214
@@ -754,6 +762,10 @@ PrefabInstance:
     - target: {fileID: 1899723502423595572, guid: 18a4121d0297f41c19c2e5a0e0dadec6, type: 3}
       propertyPath: m_Name
       value: TraitRow (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5518479257615451653, guid: 18a4121d0297f41c19c2e5a0e0dadec6, type: 3}
+      propertyPath: trait
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18a4121d0297f41c19c2e5a0e0dadec6, type: 3}
@@ -1202,6 +1214,10 @@ PrefabInstance:
     - target: {fileID: 1899723502423595572, guid: 18a4121d0297f41c19c2e5a0e0dadec6, type: 3}
       propertyPath: m_Name
       value: TraitRow (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5518479257615451653, guid: 18a4121d0297f41c19c2e5a0e0dadec6, type: 3}
+      propertyPath: trait
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18a4121d0297f41c19c2e5a0e0dadec6, type: 3}
