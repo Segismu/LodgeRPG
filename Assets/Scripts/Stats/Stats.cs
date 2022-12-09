@@ -7,6 +7,7 @@ namespace RPG.Stats
         ExperienceToLevelUp,
         Damage,
         AE,
-        aeRegen
+        aeRegen,
+        TotalTraitPoints
     }
 }
