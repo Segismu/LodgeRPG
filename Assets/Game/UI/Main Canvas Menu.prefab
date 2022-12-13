@@ -86,6 +86,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1679953207050216966}
   - component: {fileID: 1553002932088424369}
+  - component: {fileID: 7136639152003919808}
   m_Layer: 5
   m_Name: Main Menu
   m_TagString: Untagged
@@ -143,6 +144,18 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &7136639152003919808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2184607796766710241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3eb9424499f084ae7afc159a7e0dd02e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7756185715339893559
 GameObject:
   m_ObjectHideFlags: 0
@@ -156,6 +169,7 @@ GameObject:
   - component: {fileID: 1073319496908561676}
   - component: {fileID: 1051686708582617232}
   - component: {fileID: 3595487468484198246}
+  - component: {fileID: 7718313539179389661}
   m_Layer: 5
   m_Name: Main Canvas Menu
   m_TagString: Untagged
@@ -258,6 +272,19 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &7718313539179389661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7756185715339893559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f290f68bb4e224fd0848dbabd3d248f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  persistentObjectPrefab: {fileID: 9065074709025182741, guid: 611e840cf3d9a440f8dc6f52ec6a8792, type: 3}
 --- !u!1001 &71076289879511009
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -588,6 +615,34 @@ PrefabInstance:
     - target: {fileID: 2799993605921206660, guid: cbe3329c86eb64ed882e87b8f52fdb1c, type: 3}
       propertyPath: m_Name
       value: Continue
+      objectReference: {fileID: 0}
+    - target: {fileID: 2829240173736189394, guid: cbe3329c86eb64ed882e87b8f52fdb1c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2829240173736189394, guid: cbe3329c86eb64ed882e87b8f52fdb1c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2829240173736189394, guid: cbe3329c86eb64ed882e87b8f52fdb1c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 7136639152003919808}
+    - target: {fileID: 2829240173736189394, guid: cbe3329c86eb64ed882e87b8f52fdb1c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2829240173736189394, guid: cbe3329c86eb64ed882e87b8f52fdb1c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ContinueGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 2829240173736189394, guid: cbe3329c86eb64ed882e87b8f52fdb1c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: RPG.UI.MainMenuUI, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2829240173736189394, guid: cbe3329c86eb64ed882e87b8f52fdb1c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5308015255831078910, guid: cbe3329c86eb64ed882e87b8f52fdb1c, type: 3}
       propertyPath: m_text
