@@ -57,6 +57,12 @@ namespace GameDevTV.Saving
             RestoreState(LoadFile(saveFile));
         }
 
+        public bool SaveFileExists(string saveFile)
+        {
+            string path = GetPathFromSaveFile(saveFile);
+            return File.Exists(path);
+        }
+
         private Dictionary<string, object> LoadFile(string saveFile)
         {
             string path = GetPathFromSaveFile(saveFile);
