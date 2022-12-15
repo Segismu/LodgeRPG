@@ -14,14 +14,13 @@ namespace RPG.UI
 
         private void OnEnable()
         {
+            SavingWrapper savingWrapper = FindObjectOfType<SavingWrapper>();
+            if (savingWrapper == null) return;
 
             foreach (Transform child in contentRoot)
             {
                 Destroy(child.gameObject);
             }
-            SavingWrapper savingWrapper = FindObjectOfType<SavingWrapper>();
-
-            if (savingWrapper == null) return;
 
             foreach (string save in savingWrapper.ListSaves())
             {
