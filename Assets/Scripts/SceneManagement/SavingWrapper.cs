@@ -28,6 +28,12 @@ namespace RPG.SceneManagement
             StartCoroutine(LoadFirstScene());
         }
 
+        public void LoadGame(string saveFile)
+        {
+            SetCurrentSave(saveFile);
+            ContinueGame();
+        }
+
         private void SetCurrentSave(string saveFile)
         {
             PlayerPrefs.SetString(currentSaveKey, saveFile);
@@ -84,6 +90,11 @@ namespace RPG.SceneManagement
         public void Delete()
         {
             GetComponent<SavingSystem>().Delete(GetCurrentSave());
+        }
+
+        public IEnumerable<string> ListSaves()
+        {
+            return GetComponent<SavingSystem>().ListSaves();
         }
     }
 }

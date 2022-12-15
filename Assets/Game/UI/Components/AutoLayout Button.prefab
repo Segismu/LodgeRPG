@@ -91,6 +91,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5211721791169698878, guid: 9858ca240a8af4d98bc1a44b1c554b26, type: 3}
+      propertyPath: m_Spacing
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 5211721791169698878, guid: 9858ca240a8af4d98bc1a44b1c554b26, type: 3}
+      propertyPath: m_Padding.m_Top
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 5211721791169698878, guid: 9858ca240a8af4d98bc1a44b1c554b26, type: 3}
+      propertyPath: m_Padding.m_Left
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 5211721791169698878, guid: 9858ca240a8af4d98bc1a44b1c554b26, type: 3}
+      propertyPath: m_Padding.m_Right
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 5211721791169698878, guid: 9858ca240a8af4d98bc1a44b1c554b26, type: 3}
+      propertyPath: m_Padding.m_Bottom
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 7773049262673238074, guid: 9858ca240a8af4d98bc1a44b1c554b26, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -117,7 +137,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8319440944413471056, guid: 9858ca240a8af4d98bc1a44b1c554b26, type: 3}
       propertyPath: m_Name
-      value: Button
+      value: AutoLayout Button
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9858ca240a8af4d98bc1a44b1c554b26, type: 3}
