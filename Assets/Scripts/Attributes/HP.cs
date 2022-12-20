@@ -22,7 +22,7 @@ namespace RPG.Attributes
 
         LazyValue<float> hpPoints;
 
-        public bool isDead = false;
+        public bool wasDeadLastFrame = false;
 
         private void Awake()
         {
@@ -51,28 +51,29 @@ namespace RPG.Attributes
 
         public bool IsDead()
         {
-            return isDead;
+            return hpPoints.value <= 0;
         }
 
         public void TakeDamage(GameObject instigator, float damage)
         {
             hpPoints.value = Mathf.Max(hpPoints.value - damage, 0);
 
-            if (hpPoints.value <= 0)
+            if (IsDead())
             {
                 onDie.Invoke();
-                Die();
                 AwardExp(instigator);
             }
             else
             {
                 takeDamage.Invoke(damage);
             }
+            UpdateState();
         }
 
         public void Heal(float hpToRestore)
         {
             hpPoints.value = Mathf.Min(hpPoints.value + hpToRestore, GetMaxHpPoints());
+            UpdateState();
         }
 
         public float GetHpPoints()
@@ -95,16 +96,24 @@ namespace RPG.Attributes
             return hpPoints.value / GetComponent<BaseStats>().GetStat(Stat.HP);
         }
 
-        private void Die()
+        private void UpdateState()
         {
-            if (isDead) return;
+            Animator animator = GetComponent<Animator>();
+            if (!wasDeadLastFrame && IsDead())
+            {
+                animator.SetTrigger("die");
+                GetComponent<Scheduler>().CancelCurrentAction();
+            }
 
-            isDead = true;
-            GetComponent<Animator>().SetTrigger("die");
-            GetComponent<Scheduler>().CancelCurrentAction();
-        }
+            if (wasDeadLastFrame && !IsDead())
+            {
+                animator.Rebind();
+            }
 
-        private void AwardExp(GameObject instigator)
+            wasDeadLastFrame = IsDead();
+    }
+
+    private void AwardExp(GameObject instigator)
         {
             Experience exp = instigator.GetComponent<Experience>();
             if (exp == null) return;
@@ -127,10 +136,7 @@ namespace RPG.Attributes
         {
             hpPoints.value = (float) state;
 
-            if (hpPoints.value <= 0)
-            {
-                Die();
-            }
+                UpdateState();
         }
     }
 }
