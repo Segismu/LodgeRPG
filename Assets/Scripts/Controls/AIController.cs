@@ -7,6 +7,7 @@ using RPG.Movement;
 using System;
 using RPG.Attributes;
 using GameDevTV.Utils;
+using UnityEngine.AI;
 
 namespace RPG.Controls
 {
@@ -42,6 +43,17 @@ namespace RPG.Controls
             player = GameObject.FindWithTag("Player");
 
             guardPost = new LazyValue<Vector3>(GetGuardPosition);
+            guardPost.ForceInit();
+        }
+
+        public void Reset()
+        {
+            NavMeshAgent navMeshAgent = GetComponent<NavMeshAgent>();
+            navMeshAgent.Warp(guardPost.value);
+            timeSinceLastSawPlayer = Mathf.Infinity;
+            timeSinceArrivedAtWayPoint = Mathf.Infinity;
+            timeSinceAggro = Mathf.Infinity;
+            currentWayPointIndex = 0;
         }
 
         private Vector3 GetGuardPosition()
@@ -51,7 +63,7 @@ namespace RPG.Controls
 
         private void Start()
         {
-            guardPost.ForceInit();
+
         }
 
 
