@@ -26,6 +26,8 @@ namespace RPG.Dialogue
                 return false;
             }
 
+            if (GetComponent<HP>().IsDead()) return false;
+
             // Remove this in Somber
             if (GetComponent<HP>().IsDead())
             {
